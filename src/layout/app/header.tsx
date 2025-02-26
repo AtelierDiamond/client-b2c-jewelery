@@ -1,11 +1,13 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import { IoDiamondSharp } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { BiUser } from "react-icons/bi";
-import { PiShoppingCartSimple } from "react-icons/pi";
+import { PiHamburgerDuotone, PiShoppingCartSimple } from "react-icons/pi";
 import Menu from "../header/menu";
-import round from "@/../public/images/DiamondShapes/Round.png"
+import round from "@/../public/images/DiamondShapes/Round.png";
+import { IoReorderThree } from "react-icons/io5";
 
 type Route = {
     id:number,
@@ -15,6 +17,8 @@ type Route = {
 }
 
 function Header() {
+    
+  const [open, setOpen] = useState<boolean>(false)
 
     const route:Route[] = [
         { id: 1, label: "Engagement", path: "/engagement", 
@@ -441,7 +445,8 @@ function Header() {
   return (
     <header id="siteHeader" className="p-4 font-montserrat sticky w-full">
       <div id="logoHeader" className="flex justify-around">
-        <div className="flex gap-4 relative right-20">
+        <IoReorderThree className="lg:hidden" size={25} onClick={()=>{setOpen(!open)}} />
+        <div className="lg:flex lg:gap-4 hidden lg:relative lg:right-20">
           <span className="flex items-center gap-1 text-xs opacity-80">
             <IoDiamondSharp /> CONTACT US
           </span>
@@ -449,16 +454,21 @@ function Header() {
             <IoLocationOutline /> STORE LOCATOR
           </span>
         </div>
-        <div className="font-semibold text-3xl relative right-20">
+        <div className="font-semibold text-md lg:text-3xl relative lg:right-20">
           B2C Jewelery
         </div>
         <div className="flex gap-4 items-center">
-          <CiHeart size={22} />
-          <BiUser size={22} />
-          <PiShoppingCartSimple size={22} />
+          <CiHeart size={20} />
+          <BiUser size={20} />
+          <PiShoppingCartSimple size={20} />
         </div>
       </div>
-      <Menu route={route}/>
+      <div className="hidden lg:block">
+        <Menu route={route}/>
+      </div>
+      <div className="absolute bg-white w-full">
+         {open && <Menu route={route}/>}
+      </div>
     </header>
   );
 }
