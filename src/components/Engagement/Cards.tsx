@@ -2,7 +2,14 @@ import React from 'react';
 import ring from '@/utils/images/RIGTXR05314O250-GY4_1.jpg';
 import Image from 'next/image';
 import CardFilters from './CardFilters';
-import shapes from '@/utils/images/round.svg';
+import round from '../../../public/images/DiamondShapes/Round.png';
+import asscher from '../../../public/images/DiamondShapes/Asscher.png';
+import radiant from '../../../public/images/DiamondShapes/Radiant.png';
+import pear from '../../../public/images/DiamondShapes/Pear.png';
+import oval from '../../../public/images/DiamondShapes/Oval.png';
+import cushion from '../../../public/images/DiamondShapes/cushion Square.png';
+import emerald from '../../../public/images/DiamondShapes/Emerald.png';
+import princess from '../../../public/images/DiamondShapes/Princess.png';
 
 function Cards() {
     const card = [
@@ -82,32 +89,42 @@ function Cards() {
     const shape = [
         {
             id: 1,
-            img: shapes,
+            img: round,
             alt: 'round',
         },
         {
             id: 2,
-            img: shapes,
+            img: asscher,
             alt: 'round',
         },
         {
             id: 3,
-            img: shapes,
+            img: radiant,
             alt: 'round',
         },
         {
             id: 4,
-            img: shapes,
+            img: pear,
             alt: 'round',
         },
         {
             id: 5,
-            img: shapes,
+            img: oval,
             alt: 'round',
         },
         {
             id: 6,
-            img: shapes,
+            img: cushion,
+            alt: 'round',
+        },
+        {
+            id: 7,
+            img: emerald,
+            alt: 'round',
+        },
+        {
+            id: 8,
+            img: princess,
             alt: 'round',
         },
 ];
@@ -118,6 +135,9 @@ function Cards() {
         { id: 3, text: "1.5" },
         { id: 4, text: "2" },
         { id: 5, text: "2.5" },
+        { id: 6, text: "3" },
+        { id: 7, text: "3.5" },
+        { id: 8, text: "4" },
     ];
 
     return (
