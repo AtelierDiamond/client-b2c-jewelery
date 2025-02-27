@@ -8,6 +8,7 @@ import { PiHamburgerDuotone, PiShoppingCartSimple } from "react-icons/pi";
 import Menu from "../header/menu";
 import round from "@/../public/images/DiamondShapes/Round.png";
 import { IoReorderThree } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 
 type Route = {
     id:number,
@@ -19,7 +20,7 @@ type Route = {
 function Header() {
     
   const [open, setOpen] = useState<boolean>(false)
-
+  const router = useRouter();
     const route:Route[] = [
         { id: 1, label: "Engagement", path: "/engagement", 
           list: [
@@ -454,7 +455,7 @@ function Header() {
             <IoLocationOutline /> STORE LOCATOR
           </span>
         </div>
-        <div className="font-semibold text-md lg:text-3xl relative lg:right-20">
+        <div onClick={() => router.push("/")}  className="font-semibold text-md lg:text-3xl relative lg:right-20 cursor-pointer">
           B2C Jewelery
         </div>
         <div className="flex gap-4 items-center">
