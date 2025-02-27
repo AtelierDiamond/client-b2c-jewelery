@@ -20,7 +20,7 @@ function page() {
                     <TbAdjustmentsHorizontal size={25} />
                 </div>
                 <div>
-                    <section className={`${isOpen ? "block" : "hidden"} w-1/4 p-2  top-0 left-0 z-50 bg-[#F5F5DC] h-screen fixed cursor-pointer overflow-y-auto`}>
+                    <section className={`${isOpen ? "block" : "hidden"} w-1/4 p-2  top-0 left-0 z-50 bg-white h-screen fixed cursor-pointer overflow-y-auto`}>
                         <div className='w-full h-10 rounded-md flex justify-end items-center '>
                             <RxCross2 onClick={() => setIsOpen(false)} size={25} className='text-black me-2' />
                         </div>
@@ -29,7 +29,7 @@ function page() {
                 </div>
                 <div className="flex items-center gap-3 p-1">
                     <select className='mr-10'>
-                        <option className='text-2xl font-medium' defaultValue="">Sort By: Best Sellers</option>
+                        <option className='text-2xl font-medium bg-black text-white' defaultValue="">Sort By</option>
                         <option value='Best Sellers'>Best Sellers</option>
                         <option value='Newest'>Newest</option>
                         <option value='Price: Low to High'>Price: Low to High</option>

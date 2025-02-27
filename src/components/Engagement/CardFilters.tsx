@@ -1,5 +1,5 @@
 "use client";
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React, { useRef, useState } from 'react';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 
@@ -12,7 +12,7 @@ type MetalType = {
 
 type Shape = {
     id: number;
-    img: string;
+    img: string | StaticImageData;
     alt: string;
 };
 
@@ -89,7 +89,7 @@ function CardFilters({
       { title: 'Shape', items: shape },
       { title: 'Carat', items: carat },
     ].map(({ title, items }) => (
-      <div key={title} className="flex flex-col md:flex-row items-center md:items-start">
+      <div key={title} className="flex flex-col md:flex-row items-center md:items-start mt-2">
         <h3 className="xl:text-lg sm:text-xs text-gray-600 mr-2">{title}</h3>
         <div className="flex justify-around items-center w-full">
           <button
