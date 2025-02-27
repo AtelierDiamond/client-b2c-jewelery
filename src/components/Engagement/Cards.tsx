@@ -151,8 +151,6 @@ function Cards() {
                 {card.map((item) => (
                     <div key={item.id} className="p-4 flex flex-col">
                         <Link href={pathname+`/${item.id}`}>
-                    <div key={item.id} className="p-4 flex flex-col relative">
-                        <FaHeart className="absolute top-6 right-6 text-white hover:text-red-500 cursor-pointer text-xl" />
                         <Image
                             src={item.img}
                             alt={item.alt}
@@ -162,7 +160,6 @@ function Cards() {
                         />
                         </Link>
                         <div className='xl:text-md   font-semibold mt-2 '>{item.title}</div>
-                        <div className='xl:text-md font-semibold mt-2 cursor-pointer'>{item.title}</div>
                         <CardFilters metalType={metalType} shape={shape} carat={carat} />
                         <div className='font-semibold xl:text-xl mt-2 cursor-pointer'>$2600</div>
                     </div>

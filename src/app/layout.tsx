@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "B2C Jewellry",
+  title: "B2C Jewellery",
   description: "wide range of jewelry collections",
 };
 
