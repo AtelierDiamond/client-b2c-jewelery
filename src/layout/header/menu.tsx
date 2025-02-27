@@ -12,7 +12,7 @@ type List = {
 function Menu({ route }: { route: List[] }) {
 
   return (
-    <ul className="lg:flex flex-col lg:flex-row justify-center gap-8 mt-8 relativr">
+    <ul className="lg:flex flex-col lg:flex-row justify-center gap-8 mt-8 cursor-pointer">
       {route.map((item) => (
         <li key={item.id} className="group my-2">
           <Link href={item.path}>{item.label}</Link>
