@@ -34,32 +34,28 @@ function page() {
     <>
       <div className='h-screen'>
         <Banner />
-        <div className='mt-4'>
-          <h2 className="font-medium text-2xl text-center font-montserrat">Shop Diamonds By Shape</h2>
-          <div
-            className="p-3 lg:rounded-full flex justify-evenly items-center font-serif m-3 "
-          >
+        <div className="mt-4">
+          <h2 className="font-medium text-2xl text-center font-montserrat">
+            Shop Diamonds By Shape
+          </h2>
+          <div className="p-3 lg:rounded-full flex flex-wrap justify-center gap-6 items-center font-serif m-3">
             {DimondShapes.map((shape) => (
-              <div
-                key={shape.id}
-                className=""
-              >
+              <div key={shape.id} className="flex flex-col items-center">
                 <Image
                   src={shape.src}
-                  alt={shape.alt || ''}
-                  className="xl:w-[75px]"
-                  height={24}
-                  width={24}
+                  alt={shape.alt || ""}
+                  className="w-16 sm:w-20 lg:w-24 transition-transform duration-300 hover:scale-110"
+                  height={75}
+                  width={75}
                 />
-                <p
-                  className={`text-center peer-checked:font-medium peer-checked:text-black text-black text-md font-medium text-nowrap mt-4 font-montserrat`}
-                >
+                <p className="text-center text-black text-md font-medium mt-2 font-montserrat">
                   {shape.alt}
                 </p>
               </div>
             ))}
           </div>
         </div>
+
         <JewellsCategory />
       </div>
     </>
