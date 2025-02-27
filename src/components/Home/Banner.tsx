@@ -2,9 +2,9 @@ import React from "react";
 
 function Banner() {
   return (
-    <div className="w-full h-1/2 relative">
+    <div className="w-full h-1/2 relative z-[-1]">
       <video
-        className="w-full h-full object-cover opacity-80 " 
+        className="w-full h-full object-cover opacity-80" 
         autoPlay={true}
         muted={true}
         loop={true}

@@ -10,12 +10,12 @@ type List = {
 };
 
 function Menu({ route }: { route: List[] }) {
-  const [toggle, setToggle] = useState(false)
+
   return (
-    <ul className="lg:flex flex-col lg:flex-row justify-center gap-8 mt-8">
+    <ul className="lg:flex flex-col lg:flex-row justify-center gap-8 mt-8 relativr">
       {route.map((item) => (
         <li key={item.id} className="group my-2">
-          <Link onClick={()=>setToggle(!toggle)} href={item.path}>{item.label}</Link>
+          <Link href={item.path}>{item.label}</Link>
           {/* Full-width dropdown */}
           <MenuList list={item.list} />
         </li>

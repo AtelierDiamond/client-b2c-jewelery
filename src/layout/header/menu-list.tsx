@@ -5,7 +5,7 @@ import React from "react";
 function MenuList({list}:{list:any}) {
 
 
-  return <div className={`border flex-wrap flex-1 absolute start-[-15] w-full hidden lg:group-hover:flex gap-14 justify-center p-4 bg-white shadow-sm`}>
+  return <div className={`border absolute end-0  w-full hidden lg:group-hover:flex gap-14 justify-center p-4 bg-white shadow-sm `}>
           {
             list.map((item:any , index:number)=>(
                 <div key={index} >
