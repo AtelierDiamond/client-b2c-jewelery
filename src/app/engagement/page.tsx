@@ -20,7 +20,7 @@ function page() {
                     <TbAdjustmentsHorizontal size={25} />
                 </div>
                 <div>
-                    <section className={`${isOpen ? "block" : "hidden"} w-1/4 p-2  top-0 left-0 z-50 bg-white h-screen fixed cursor-pointer overflow-y-auto`}>
+                    <section className={`${isOpen ? "block" : "hidden"} xl:w-1/4 p-2 w-full top-0 left-0 z-50 bg-white h-screen fixed cursor-pointer overflow-y-auto`}>
                         <div className='w-full h-10 rounded-md flex justify-end items-center '>
                             <RxCross2 onClick={() => setIsOpen(false)} size={25} className='text-black me-2' />
                         </div>
