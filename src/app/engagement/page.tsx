@@ -11,8 +11,8 @@ function page() {
         <>
         <div className='font-montserrat'>
             <div className='mx-auto mt-5'>
-                <p className='flex justify-center items-center text-center text-sm'>Lab Grown Diamond</p>
-                <h1 className='flex justify-center items-center text-center text-2xl font-normal'>Engagement Ring</h1>
+                <p className='flex justify-center items-center text-center text-sm cursor-pointer'>Lab Grown Diamond</p>
+                <h1 className='flex justify-center items-center text-center text-2xl font-normal cursor-pointer'>Engagement Ring</h1>
             </div>
             <div className='flex justify-between items-center m-8 mb-0 cursor-pointer'>
                 <div className="flex items-center gap-3 p-1" onClick={() => setIsOpen(true)}>
@@ -29,7 +29,7 @@ function page() {
                 </div>
                 <div className="flex items-center gap-3 p-1">
                     <select className='mr-10'>
-                        <option className='text-2xl font-medium bg-black text-white' defaultValue="">Sort By</option>
+                        <option className='xl:text-2xl text-md font-medium bg-black text-white' defaultValue="">Sort By</option>
                         <option value='Best Sellers'>Best Sellers</option>
                         <option value='Newest'>Newest</option>
                         <option value='Price: Low to High'>Price: Low to High</option>

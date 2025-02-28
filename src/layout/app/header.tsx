@@ -448,15 +448,15 @@ function Header() {
       <div id="logoHeader" className="flex justify-around">
         <IoReorderThree className="lg:hidden" size={25} onClick={()=>{setOpen(!open)}} />
         <div className="lg:flex lg:gap-4 hidden lg:relative lg:right-20">
-          <span className="flex items-center gap-1 text-xs opacity-80">
+          <span className="flex items-center gap-1 text-xs opacity-80 cursor-pointer">
             <IoDiamondSharp /> CONTACT US
           </span>
-          <span className="flex items-center gap-1 text-xs opacity-80">
+          <span className="flex items-center gap-1 text-xs opacity-80 cursor-pointer">
             <IoLocationOutline /> STORE LOCATOR
           </span>
         </div>
         <div onClick={() => router.push("/")}  className="font-semibold text-md lg:text-3xl relative lg:right-20 cursor-pointer">
-          B2C Jewelery
+          B2C Jewellery
         </div>
         <div className="flex gap-4 items-center">
           <CiHeart size={20} />

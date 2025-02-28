@@ -12,7 +12,7 @@ type List = {
 function Menu({ route }: { route: List[] }) {
   const [toggle, setToggle] = useState(false)
   return (
-    <ul className="lg:flex flex-col lg:flex-row justify-center gap-8 mt-8">
+    <ul className="lg:flex flex-col lg:flex-row justify-center gap-8 mt-8 cursor-pointer">
       {route.map((item) => (
         <li key={item.id} className="group my-2">
           <Link onClick={()=>setToggle(!toggle)} href={item.path}>{item.label}</Link>
