@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import ring from '@/utils/images/RIGTXR05314O250-GY4_1.jpg';
 import Image from 'next/image';
@@ -10,9 +11,11 @@ import oval from '../../../public/images/DiamondShapes/Oval.png';
 import cushion from '../../../public/images/DiamondShapes/cushion Square.png';
 import emerald from '../../../public/images/DiamondShapes/Emerald.png';
 import princess from '../../../public/images/DiamondShapes/Princess.png';
-import { FaHeart } from 'react-icons/fa';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 function Cards() {
+    const pathname = usePathname();
     const card = [
         {
             id: 1,
@@ -145,8 +148,8 @@ function Cards() {
         <>
             <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5 px-4">
                 {card.map((item) => (
-                    <div key={item.id} className="p-4 flex flex-col relative">
-                        <FaHeart className="absolute top-6 right-6 text-white hover:text-red-500 cursor-pointer text-xl" />
+                    <div key={item.id} className="p-4 flex flex-col">
+                        <Link href={pathname+`/${item.id}`}>
                         <Image
                             src={item.img}
                             alt={item.alt}
@@ -154,7 +157,8 @@ function Cards() {
                             height={200}
                             width={360}
                         />
-                        <div className='xl:text-md font-semibold mt-2 cursor-pointer'>{item.title}</div>
+                        </Link>
+                        <div className='xl:text-md   font-semibold mt-2 '>{item.title}</div>
                         <CardFilters metalType={metalType} shape={shape} carat={carat} />
                         <div className='font-semibold xl:text-xl mt-2 cursor-pointer'>$2600</div>
                     </div>

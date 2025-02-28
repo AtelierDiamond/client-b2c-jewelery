@@ -4,7 +4,7 @@ function Banner() {
   return (
     <div className="w-full h-[75%] relative">
       <video
-        className="w-full h-full object-cover opacity-80 " 
+        className="w-full h-full object-cover opacity-80" 
         autoPlay={true}
         muted={true}
         loop={true}

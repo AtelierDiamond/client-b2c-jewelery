@@ -467,7 +467,7 @@ function Header() {
       <div className="hidden lg:block">
         <Menu route={route}/>
       </div>
-      <div className="absolute bg-white w-full">
+      <div className="absolute start-0 p-2 bg-white w-full lg:hidden">
          {open && <Menu route={route}/>}
       </div>
     </header>
