@@ -73,7 +73,7 @@ function Header() {
               ],
             },
             {
-              title: "Jewelry Guide",
+              title: "Jewellery Guide",
               items: [
                 { label: "Engagement Ring Style" },
                 { label: "Find the Perfect Engagement Ring" },
@@ -134,7 +134,7 @@ function Header() {
               ],
             },
             {
-              title: "Jewelry Guide",
+              title: "Jewellery Guide",
               items: [
                 { label: "Engagement Ring Style" },
                 { label: "Find the Perfect Engagement Ring" },
@@ -144,7 +144,7 @@ function Header() {
             },
           ]
          },
-        { id: 3, label: "Jewelry", path: "/jewelry",
+        { id: 3, label: "Jewellery", path: "/Jewellery",
           list: [
             {
               title: "Shop by Style",
@@ -195,7 +195,7 @@ function Header() {
               ],
             },
             {
-              title: "Jewelry Guide",
+              title: "Jewellery Guide",
               items: [
                 { label: "Engagement Ring Style" },
                 { label: "Find the Perfect Engagement Ring" },
@@ -255,7 +255,7 @@ function Header() {
             ],
           },
           {
-            title: "Jewelry Guide",
+            title: "Jewellery Guide",
             items: [
               { label: "Engagement Ring Style" },
               { label: "Find the Perfect Engagement Ring" },
@@ -314,7 +314,7 @@ function Header() {
             ],
           },
           {
-            title: "Jewelry Guide",
+            title: "Jewellery Guide",
             items: [
               { label: "Engagement Ring Style" },
               { label: "Find the Perfect Engagement Ring" },
@@ -373,7 +373,7 @@ function Header() {
             ],
           },
           {
-            title: "Jewelry Guide",
+            title: "Jewellery Guide",
             items: [
               { label: "Engagement Ring Style" },
               { label: "Find the Perfect Engagement Ring" },
@@ -432,7 +432,7 @@ function Header() {
               ],
             },
             {
-              title: "Jewelry Guide",
+              title: "Jewellery Guide",
               items: [
                 { label: "Engagement Ring Style" },
                 { label: "Find the Perfect Engagement Ring" },
@@ -444,7 +444,7 @@ function Header() {
     ];
 
   return (
-    <header id="siteHeader" className="p-4 font-montserrat sticky w-full">
+    <header id="siteHeader" className="p-4 font-montserrat sticky w-full z-50">
       <div id="logoHeader" className="flex justify-around">
         <IoReorderThree className="lg:hidden" size={25} onClick={()=>{setOpen(!open)}} />
         <div className="lg:flex lg:gap-4 hidden lg:relative lg:right-20">

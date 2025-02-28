@@ -13,6 +13,7 @@ import emerald from '../../../public/images/DiamondShapes/Emerald.png';
 import princess from '../../../public/images/DiamondShapes/Princess.png';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { FaHeart } from 'react-icons/fa';
 
 function Cards() {
     const pathname = usePathname();
