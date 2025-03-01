@@ -38,39 +38,37 @@ function ProductDetail() {
     {value:"DEF", title:"DEF"}
   ]
 
- 
-
   return (
     <div className=" grid grid-cols-1 md:grid-cols-2 h-full font-montserrat">
       <div className="flex justify-center items-center">
         <ProductDetailSlider slides={SliderImage} options={OPTIONS} />
       </div>
-      <div className="bg-black text-white md:mb-none">
-        <h1 className="text-xl text-center mt-10">
+      <div className=" text-black md:mb-none ">
+        <h1 className="text-2xl font-medium mt-10 ">
           14k Round Diamond Tennis Bracelet
         </h1>
-        <h1 className="text-xl bg-white mt-4 text-black ps-10 py-1">
+        <h1 className="text-xl mt-4 text-black py-1 ">
           $ 5,050
         </h1>
-        <div className="w-[80%] mx-auto">
+        <div className="w-[80%]">
            <MetalType metalType={metalType}/>
            <SizeSelectors sizes={sizes}/>
            <div className="flex gap-4 mt-5">
                <div className="w-1/2">
                   <h1>Color:</h1>
-                  <Selector options={color} customClass="bg-black"/>
+                  <Selector options={color} customClass="bg-black text-white"/>
                </div>
                <div className="w-1/2">
                   <h1>Clarity:</h1>
-                  <Selector options={color} customClass="bg-black"/>
+                  <Selector options={color} customClass="bg-black text-white"/>
                </div>
            </div>
            <div className="mt-5">
               <h1>Size (MM):</h1>
-              <Selector  options={color} customClass="bg-black" />
+              <Selector  options={color} customClass="bg-black text-white" />
            </div>
            <div className="text-center">
-           <button className="rounded-3xl mt-14 text-black px-4 p-1 text-xl bg-[#b7a99a] mb-8">Add to cart</button>
+           <button className=" mt-14 text-white font-montserrat font-medium px-4 p-1 text-xl bg-black mb-8">Add to cart</button>
            </div>
         </div>
       </div>

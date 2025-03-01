@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import style1 from '@/utils/images/Mixed_Metal_v2.webp';
 import { Icon } from "@iconify/react";
 import Image from 'next/image';
+import PriceInput from '../common/PriceSlider';
 
 function Filters() {
     const [toggleMetal, setToggleMetal] = useState(true);
@@ -48,17 +49,17 @@ function Filters() {
                 </div>
                 {toggleMetal && (
                     <div className='flex mt-4 gap-3 flex-wrap'>
-                    {metal.map(item => (
-                        <div key={item.id} className='flex flex-col items-center'>
-                            <div className="rounded-full border border-gray-300 h-14 w-14" style={{ backgroundColor: item.colorCode }}></div>
-                            <div className="xl:text-md text-sm text-black w-full text-center mt-1 font-montserrat font-normal">{item.title}</div>
-                        </div>
-                    ))}
-                </div>
+                        {metal.map(item => (
+                            <div key={item.id} className='flex flex-col items-center'>
+                                <div className="rounded-full border border-gray-300 h-14 w-14" style={{ backgroundColor: item.colorCode }}></div>
+                                <div className="xl:text-md text-sm text-black w-full text-center mt-1 font-montserrat font-normal">{item.title}</div>
+                            </div>
+                        ))}
+                    </div>
                 )}
             </div>
             <div className='mt-6'>
-            <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleStyle(!toggleStyle)}>
+                <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleStyle(!toggleStyle)}>
                     <p className="xl:text-xl text-md font-semibold font-montserrat text-black">Style</p>
                     <Icon icon={toggleStyle ? "mdi:chevron-up" : "mdi:chevron-down"} className="text-xl text-black" />
                 </div>
@@ -74,43 +75,77 @@ function Filters() {
                 )}
             </div>
             <div className='mt-6'>
-            <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleWidth(!toggleWidth)}>
+                <div className="space-y-4">
+                    <h3 className="text-xl font-medium ">Price</h3>
+                    <input type="range" className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-black" />
+                    <div className="flex justify-between text-sm text-gray-700">
+                        <div className="flex items-center gap-2 mt-2">
+                            <div className="relative flex items-center">
+                                <span className="absolute left-2 text-gray-500">₹</span>
+                                <input
+                                    type="number"
+                                    className="pl-6 pr-2 py-1 border border-gray-300 rounded-md w-20 text-center"
+                                />
+                            </div>
+
+                            <span className="text-sm text-gray-500">to</span>
+
+                            <div className="relative flex items-center">
+                                <span className="absolute left-2 text-gray-500">₹</span>
+                                <input
+                                    type="number"
+                                    className="pl-6 pr-2 py-1 border border-gray-300 rounded-md w-20 text-center"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='mt-6'>
+                <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleWidth(!toggleWidth)}>
                     <p className="xl:text-xl text-md font-semibold font-montserrat text-black">Width</p>
                     <Icon icon={toggleWidth ? "mdi:chevron-up" : "mdi:chevron-down"} className="text-xl text-black" />
                 </div>
                 {toggleWidth && (
                     width.map(item => (
-                        <div key={item.id} className='flex gap-2 items-center'>
-                            <input type='checkbox' />
-                            <div className="xl:text-md text-sm text-black font-montserrat font-normal">{item.title}</div>
+                        <div key={item.id} className="flex gap-3 items-center">
+                            <input type="checkbox" className="h-5 w-5" />
+                            <div className="text-base xl:text-lg text-black font-montserrat font-normal">
+                                {item.title}
+                            </div>
                         </div>
+
                     ))
                 )}
             </div>
             <div className='mt-6'>
-            <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleGemstone(!toggleGemstone)}>
+                <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleGemstone(!toggleGemstone)}>
                     <p className="xl:text-xl text-md font-semibold font-montserrat text-black">Gemstone</p>
                     <Icon icon={toggleGemstone ? "mdi:chevron-up" : "mdi:chevron-down"} className="text-xl text-black" />
                 </div>
                 {toggleGemstone && (
                     gemstone.map(item => (
-                        <div key={item.id} className='flex gap-2 items-center'>
-                            <input type='checkbox' />
-                            <div className="xl:text-md text-sm text-black font-montserrat font-normal">{item.title}</div>
+                        <div key={item.id} className="flex gap-3 items-center">
+                            <input type="checkbox" className="h-5 w-5" />
+                            <div className="text-base xl:text-lg text-black font-montserrat font-normal">
+                                {item.title}
+                            </div>
                         </div>
                     ))
                 )}
             </div>
             <div className='mt-6'>
-            <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleEngravable(!toggleEngravable)}>
+                <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleEngravable(!toggleEngravable)}>
                     <p className="xl:text-xl text-md font-semibold font-montserrat text-black">Engravable</p>
                     <Icon icon={toggleEngravable ? "mdi:chevron-up" : "mdi:chevron-down"} className="text-xl text-black" />
                 </div>
                 {toggleEngravable && (
                     engravable.map(item => (
-                        <div key={item.id} className='flex gap-2 items-center'>
-                            <input type='checkbox' />
-                            <div className="xl:text-md text-sm font-[200px] text-black font-montserrat font-normal">{item.title}</div>
+                        <div key={item.id} className="flex gap-3 items-center">
+                            <input type="checkbox" className="h-5 w-5" />
+                            <div className="text-base xl:text-lg text-black font-montserrat font-normal">
+                                {item.title}
+                            </div>
                         </div>
                     ))
                 )}
