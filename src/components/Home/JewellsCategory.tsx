@@ -44,7 +44,7 @@ function JewellsCategory() {
  
 
   return (
-    <div className="w-[98vw] p-4 mx-auto xl:mt-0 md:mt-0 mt-96">
+    <div className="w-full p-4 mt-8">
       <h2 className="text-3xl text-black font-medium cursor-pointer">
         Categories
       </h2>

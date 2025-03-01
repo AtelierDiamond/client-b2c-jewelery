@@ -70,7 +70,7 @@ function ProductDetail() {
               <Selector  options={color} customClass="bg-black" />
            </div>
            <div className="text-center">
-           <button className="rounded-3xl mt-14 text-black px-4 p-1 text-xl bg-[#b7a99a] mb-8">Add to cart</button>
+           <button className="rounded-3xl mt-14 text-black font-montserrat font-medium px-4 p-1 text-xl bg-white mb-8">Add to cart</button>
            </div>
         </div>
       </div>

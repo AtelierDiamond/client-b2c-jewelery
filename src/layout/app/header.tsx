@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-import { IoDiamondSharp } from "react-icons/io5";
+import { IoClose, IoDiamondSharp } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { BiUser } from "react-icons/bi";
@@ -446,7 +446,11 @@ function Header() {
   return (
     <header id="siteHeader" className="p-4 font-montserrat sticky w-full z-50">
       <div id="logoHeader" className="flex justify-around">
-        <IoReorderThree className="lg:hidden" size={25} onClick={()=>{setOpen(!open)}} />
+      {open ? (
+          <IoClose className="lg:hidden" size={25} onClick={() => setOpen(false)} />
+        ) : (
+          <IoReorderThree className="lg:hidden" size={25} onClick={() => setOpen(true)} />
+        )}
         <div className="lg:flex lg:gap-4 hidden lg:relative lg:right-20">
           <span className="flex items-center gap-1 text-xs opacity-80 cursor-pointer">
             <IoDiamondSharp /> CONTACT US
