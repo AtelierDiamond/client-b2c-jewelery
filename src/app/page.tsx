@@ -34,7 +34,7 @@ function Page() {
   return (
     <div className="min-h-screen flex flex-col items-center">
       <Banner />
-      <div className="w-full mt-8 text-center">
+      {/* <div className="w-full mt-8 text-center">
         <h2 className="text-2xl font-semibold">Shop Diamonds By Shape</h2>
         <div className="flex flex-wrap justify-center gap-6 mt-6">
           {DiamondShapes.map((shape) => (
@@ -50,7 +50,7 @@ function Page() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
       <JewellsCategory />
     </div>
   );
