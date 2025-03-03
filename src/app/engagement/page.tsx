@@ -17,7 +17,7 @@ function Page() {
                 <div className="grid grid-cols-1 md:grid-cols-[450px_1fr] mt-6">
                     <div className="hidden lg:block flex flex-col gap-4 w-full mx-8">
                         <h4 className="xl:text-2xl text-md font-semibold font-montserrat text-black m-4">Sort By</h4>
-                        <select className="mx-4 p-2 xl:w-full border border-gray-300 rounded-md text-sm md:text-base cursor-pointer focus:outline-none focus:ring-2 focus:ring-black">
+                        <select className="mx-4 p-2 border border-gray-300 rounded-md text-sm md:text-base cursor-pointer focus:outline-none focus:ring-2 focus:ring-black">
                             <option defaultValue="">Best Sellers</option>
                             <option value="Newest">Newest</option>
                             <option value="Price: Low to High">Price: Low to High</option>
