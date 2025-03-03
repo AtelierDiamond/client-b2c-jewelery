@@ -8,7 +8,6 @@ import MetalType from "./MetalType";
 import SizeSelectors from "./SizeSelectors";
 import Selector from "./Selector";
 
-
 const OPTIONS: EmblaOptionsType = {};
 
 function ProductDetail() {
@@ -19,57 +18,59 @@ function ProductDetail() {
   ];
 
   const metalType = [
-    { id: 1, colorCode: "#ffffff", text: "14K", title: "White gold" },
-    { id: 2, colorCode: "#e5ce83", text: "", title: "Yellow gold" },
-    { id: 3, colorCode: "#e7ba9a", text: "", title: "Rose gold" },
+    { id: 1, colorCode: "#ffffff", text: "14K", title: "White Gold" },
+    { id: 2, colorCode: "#e5ce83", text: "", title: "Yellow Gold" },
+    { id: 3, colorCode: "#e7ba9a", text: "", title: "Rose Gold" },
   ];
 
   const sizes = [
-    {id:"size1", value:6, title:"6"},
-    {id:"size2", value:6.5, title:"6.5"},
-    {id:"size3", value:7, title:"7"},
-    {id:"size4", value:7.5, title:"7.5"},
+    { id: "size1", value: 6, title: "6" },
+    { id: "size2", value: 6.5, title: "6.5" },
+    { id: "size3", value: 7, title: "7" },
+    { id: "size4", value: 7.5, title: "7.5" },
   ];
 
-  const color = [
-    {value:"DEF", title:"DEF"},
-    {value:"DEF", title:"DEF"},
-    {value:"DEF", title:"DEF"},
-    {value:"DEF", title:"DEF"}
-  ]
+  const colors = [
+    { value: "DEF", title: "DEF" },
+    { value: "GHI", title: "GHI" },
+    { value: "JKL", title: "JKL" },
+    { value: "MNO", title: "MNO" },
+  ];
 
   return (
-    <div className=" grid grid-cols-1 md:grid-cols-2 h-full font-montserrat">
+    <div className="grid grid-cols-1 md:grid-cols-2 h-full font-montserrat gap-8 md:gap-12">
       <div className="flex justify-center items-center">
         <ProductDetailSlider slides={SliderImage} options={OPTIONS} />
       </div>
-      <div className=" text-black md:mb-none ">
-        <h1 className="text-2xl font-medium mt-10 ">
-          14k Round Diamond Tennis Bracelet
-        </h1>
-        <h1 className="text-xl mt-4 text-black py-1 ">
-          $ 5,050
-        </h1>
-        <div className="w-[80%]">
-           <MetalType metalType={metalType}/>
-           <SizeSelectors sizes={sizes}/>
-           <div className="flex gap-4 mt-5">
-               <div className="w-1/2">
-                  <h1>Color:</h1>
-                  <Selector options={color} customClass="bg-white text-black"/>
-               </div>
-               <div className="w-1/2">
-                  <h1>Clarity:</h1>
-                  <Selector options={color} customClass="bg-white text-black"/>
-               </div>
-           </div>
-           <div className="mt-5">
-              <h1>Size (MM):</h1>
-              <Selector options={color} customClass="bg-white border border-[#4d6d38] text-black" />
-           </div>
-           <div className="text-center">
-           <button className="mt-14 text-white font-montserrat font-medium px-4 p-1 text-xl bg-[#4d6d38] mb-8">Add to cart</button>
-           </div>
+      <div className="text-black ml-14 xl:mx-0">
+        <h1 className="text-2xl font-medium mt-10">14K Round Diamond Tennis Bracelet</h1>
+        <h2 className="text-xl mt-4">$5,050</h2>
+
+        <div className="w-[80%] mt-6 space-y-6">
+          <MetalType metalType={metalType} />
+          <SizeSelectors sizes={sizes} />
+
+          <div className="flex gap-4">
+            <div className="w-1/2">
+              <h1 className="font-medium">Color:</h1>
+              <Selector options={colors} customClass="bg-white text-black" />
+            </div>
+            <div className="w-1/2">
+              <h1 className="font-medium">Clarity:</h1>
+              <Selector options={colors} customClass="bg-white text-black" />
+            </div>
+          </div>
+
+          <div>
+            <h1 className="font-medium">Size (MM):</h1>
+            <Selector options={colors} customClass="bg-white border border-[#4d6d38] text-black" />
+          </div>
+
+          <div className="text-center mt-10">
+            <button className="text-white font-medium px-6 py-2 my-4 text-xl bg-[#4d6d38] rounded-lg shadow-md hover:bg-[#3b562c] transition">
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
     </div>
