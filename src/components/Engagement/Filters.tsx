@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import style1 from '@/utils/images/Mixed_Metal_v2.webp';
 import { Icon } from "@iconify/react";

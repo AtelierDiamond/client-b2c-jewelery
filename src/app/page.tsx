@@ -11,7 +11,7 @@ function Page() {
     <div className="min-h-screen flex flex-col items-center">
       <Banner />
       <JewellsCategory />
-      <div className="relative flex flex-col lg:flex-row items-center gap-6 bg-gray-100 p-6 rounded-lg w-full overflow-hidden">
+      <div className="relative flex flex-col lg:flex-row items-center gap-6 bg-gray-100 p-6 pt-0 rounded-lg w-full overflow-hidden">
         <Image
           src={background}
           alt="Background Image"

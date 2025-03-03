@@ -6,7 +6,7 @@ import background from '../../../public/images/banner/Texture Background.png'
 import ring from "../../../public/images/categories/ring.jpg";
 import bracelet from "../../../public/images/categories/bracelet.jpg";
 import earring from "../../../public/images/categories/earrings.jpg";
-import necklace from "../../../public/images/categories/Necklace.png";
+import necklace from "../../../public/images/categories/necklace.jpg";
 import pendant from "../../../public/images/categories/pendant.jpg";
 
 type Item = {
@@ -33,7 +33,7 @@ function JewellsCategory() {
         className="opacity-90"
         priority
       />
-      <h2 className="relative text-4xl text-black font-medium mb-6 text-center ">
+      <h2 className="relative text-4xl text-black font-medium mb-6 text-center mt-4">
         CATEGORIES
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
