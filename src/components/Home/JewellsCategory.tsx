@@ -24,7 +24,7 @@ function JewellsCategory() {
   ];
 
   return (
-    <div className="w-full px-4 py-8 font-montserrat relative mt-4">
+    <div className="w-full px-4 font-montserrat relative mt-4">
       <Image
         src={background}
         alt="background Image"
