@@ -9,7 +9,7 @@ function Selector({options, customClass}:{
     options:Option[],
     customClass:string
 }) {
-  return <select className={`bg-[#20403a] border border-white rounded-md w-full focus:outline-none p-1 ${customClass}`} name="" id="">
+  return <select className={`bg-[#20403a] border border-[#4d6d38] rounded-md w-full focus:outline-none p-1 ${customClass}`} name="" id="">
       {
         options.map((option,index)=>(
             <option key={index} value={option.value}>{option.value}</option>
