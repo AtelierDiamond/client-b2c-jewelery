@@ -56,9 +56,9 @@ function Footer() {
                     </div>
                 ))}
                 <div>
-                    <h3 className="font-semibold text-lg md:text-xl text-black">Contact Number</h3>
+                    <h3 className="font-semibold text-lg md:text-xl text-black xl:mt-0 mt-6">Contact Number</h3>
                     <p className="text-md text-black mt-1">+123 12345678</p>
-                    <h3 className="font-semibold text-lg md:text-xl text-black mt-4">Mail us at</h3>
+                    <h3 className="font-semibold text-lg md:text-xl text-black mt-6">Mail us at</h3>
                     <div className="flex items-center border border-[#4d6d38] rounded-lg px-3 py-2 mt-3 w-full max-w-xs">
                         <FaEnvelope className="text-[#4d6d38] mr-2" size={24} />
                         <input
@@ -69,8 +69,8 @@ function Footer() {
                     </div>
                 </div>
                 <div>
-                    <h3 className="font-semibold text-lg md:text-xl text-black">Get Social</h3>
-                    <div className="flex items-center gap-4 mt-3">
+                    <h3 className="font-semibold text-lg md:text-xl text-black xl:mt-0 mt-6">Get Social</h3>
+                    <div className="flex items-center gap-4 mt-1">
                         <FaFacebook className="text-[#4d6d38] cursor-pointer hover:text-gray-700 transition" size={24} />
                         <FaInstagram className="text-[#4d6d38] cursor-pointer hover:text-gray-700 transition" size={24} />
                         <span className="text-black text-md cursor-pointer hover:underline">diamondresinc</span>
