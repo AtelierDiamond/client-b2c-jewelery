@@ -1,5 +1,4 @@
 "use client";
-import ImageCarousel from '@/components/Engagement/CardCarousel';
 import Cards from '@/components/Engagement/Cards'
 import Filters from '@/components/Engagement/Filters';
 import React, { useState } from 'react'

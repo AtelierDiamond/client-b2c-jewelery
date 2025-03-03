@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { RxCross2 } from 'react-icons/rx';
 import { TbAdjustmentsHorizontal } from 'react-icons/tb'
 
-function page() {
+function Page() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     return (
         <>
@@ -57,4 +57,4 @@ function page() {
     )
 }
 
-export default page
+export default Page

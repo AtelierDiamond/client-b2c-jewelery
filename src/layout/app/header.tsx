@@ -1,10 +1,9 @@
 "use client"
 import React, { useState } from "react";
-import { IoClose, IoDiamondSharp } from "react-icons/io5";
-import { IoLocationOutline } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { BiUser } from "react-icons/bi";
-import { PiHamburgerDuotone, PiShoppingCartSimple } from "react-icons/pi";
+import { PiShoppingCartSimple } from "react-icons/pi";
 import Menu from "../header/menu";
 import round from "@/../public/images/DiamondShapes/Round.png";
 import { IoReorderThree } from "react-icons/io5";

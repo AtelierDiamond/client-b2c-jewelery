@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import style1 from '@/utils/images/Mixed_Metal_v2.webp';
 import { Icon } from "@iconify/react";
 import Image from 'next/image';
-import PriceInput from '../common/PriceSlider';
 
 function Filters() {
     const [toggleMetal, setToggleMetal] = useState(true);

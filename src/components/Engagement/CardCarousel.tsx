@@ -15,7 +15,7 @@ const images = [
     { id: 4, src: "/images/engagement/image5.jpg" },
 ];
 
-const ImageCarousel = ({ link, className }: { link: string, className: string }) => {
+const ImageCarousel = ({ link }: { link: string, className: string }) => {
     const swiperRef = useRef<any>(null);
 
     return (
