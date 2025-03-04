@@ -1,12 +1,13 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
+import Link from "next/link";
+import background from '../../../public/images/banner/Texture Background.png'
 import ring from "../../../public/images/categories/ring.jpg";
 import bracelet from "../../../public/images/categories/bracelet.jpg";
-import earring from "../../../public/images/categories/earring.jpg";
-import necklace from "../../../public/images/categories/necklace.jpg";
+import earring from "../../../public/images/categories/earrings.jpg";
+import necklace from "../../../public/images/categories/Necklace.png";
 import pendant from "../../../public/images/categories/pendant.jpg";
-import Link from "next/link";
 
 type Item = {
   img: StaticImageData;
@@ -14,42 +15,45 @@ type Item = {
 };
 
 function JewellsCategory() {
-
-  const categoryImages:Item[] = [
-    { img: ring, alt: "Ring" },
-    { img: bracelet, alt: "Bracelet" },
-    { img: earring, alt: "Earring" },
-    { img: necklace, alt: "Necklace" },
-    { img: pendant, alt: "Pendant" },
+  const categoryImages: Item[] = [
+    { img: ring, alt: "RING" },
+    { img: bracelet, alt: "BRACELET" },
+    { img: earring, alt: "EARRING" },
+    { img: necklace, alt: "NECKLACE" },
+    { img: pendant, alt: "PENDANT" },
   ];
- 
 
   return (
-    <div className="w-full p-4 mt-8">
-      <h2 className="text-3xl text-black font-medium cursor-pointer mb-2">
-        Categories
+    <div className="w-full px-4 py-8 font-montserrat relative mt-4">
+      <Image
+        src={background}
+        alt="background Image"
+        layout="fill"
+        objectFit="cover"
+        className="opacity-90"
+        priority
+      />
+      <h2 className="relative text-4xl text-black font-medium mb-6 text-center ">
+        CATEGORIES
       </h2>
-      <div
-  className="flex gap-6 w-full relative"
->
-  {categoryImages.map((item, index) => (
-    <div key={index} className="flex flex-col items-center">
-      <div className="relative group overflow-hidden">
-        <Link href={`/engagement?category=${item.alt.toLowerCase()}`} passHref>
-          <Image
-            className="object-cover transition-transform duration-500 ease-in-out group-hover:-translate-y-14"
-            src={item.img}
-            alt={item.alt}
-          />
-        </Link>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
+        {categoryImages.map((item, index) => (
+          <div key={index} className="flex flex-col items-center">
+            <div className="relative group w-32 h-32 xl:w-64 xl:h-64 overflow-hidden">
+              <Link href={`/engagement?category=${item.alt.toLowerCase()}`} passHref>
+                <Image
+                  className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  src={item.img}
+                  alt={item.alt}
+                />
+              </Link>
+            </div>
+            <h1 className="relative text-center xl:text-xl mt-3 font-bold text-[#a49886]">
+              {item.alt}
+            </h1>
+          </div>
+        ))}
       </div>
-      <h1 className="text-center text-xl mt-2 font-medium cursor-pointer text-black">
-        {item.alt}
-      </h1>
-    </div>
-  ))}
-</div>
-
     </div>
   );
 }

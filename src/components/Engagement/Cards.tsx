@@ -16,11 +16,17 @@ const Cards = () => {
     return (
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5">
             {cardList.map((item) => (
-                <div key={item.id} className="p-4 flex flex-col items-center w-full max-w-xs">
+                <div
+                    key={item.id}
+                    className="p-4 flex flex-col items-center w-full max-w-xs mx-auto"
+                >
                     <div className="w-full flex justify-center items-center">
-                        <ImageCarousel link={`${pathname}/${item.id}`} className="w-full h-48 object-cover" />
+                        <ImageCarousel
+                            link={`${pathname}/${item.id}`}
+                            className="w-full h-48 object-cover rounded-md"
+                        />
                     </div>
-                    <div className="w-full font-semibold mt-2 text-sm xl:text-md">
+                    <div className="w-full font-semibold mt-2 text-sm md:text-md">
                         {item.title}
                     </div>
                     <div className="w-full text-sm mt-1">
@@ -33,15 +39,15 @@ const Cards = () => {
                     <Link href={`${pathname}/${item.id}`} className="w-full">
                         <button
                             type="button"
-                            className="w-full bg-black text-white font-semibold py-2 px-6 mt-2 text-md xl:text-xl font-montserrat text-center"
+                            className="w-full bg-[#4d6d38] text-white font-semibold py-2 px-6 mt-3 text-md md:text-lg"
                         >
                             Add To Cart
                         </button>
                     </Link>
                 </div>
             ))}
-
         </div>
+
     );
 };
 

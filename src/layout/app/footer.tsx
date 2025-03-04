@@ -1,81 +1,85 @@
 "use client";
-import { useRouter } from 'next/navigation';
-import React from 'react';
-import { FaLongArrowAltRight } from 'react-icons/fa';
+import Image from "next/image";
+import { FaInstagram, FaFacebook, FaEnvelope } from "react-icons/fa";
+import background from "../../../public/images/banner/Texture Background.png";
 
 function Footer() {
-    const router = useRouter();
     const footerList = [
         {
-            id: 1, label: "Support", path: "#",
+            id: 1,
+            label: "Company",
             list: [
-                { label: "Free Shipping" },
-                { label: "Free Returns" },
-                { label: "Warranty" },
-                { label: "Payment & Financing" },
-                { label: "Special Offers" },
-                { label: "GB Club" },
-                { label: "Blog" },
-                { label: "Accessibility" },
-                { label: "Support Center" },
-            ]
+                { label: "About us" },
+                { label: "Review" },
+                { label: "FAQs" },
+                { label: "Certification" },
+                { label: "Site Map" },
+                { label: "Contact us" },
+            ],
         },
         {
-            id: 2, label: "Contact", path: "#",
+            id: 2,
+            label: "Explore",
             list: [
-                { label: "7452589631" },
-                { label: "Affiliates" },
-                { label: "Email Us" },
-                { label: "Live Chat" },
-                { label: "Book an Appointment" },
-                { label: "Store Locator" },
-                { label: "Careers" },
-            ]
+                { label: "Privacy Policy" },
+                { label: "Terms of Service" },
+                { label: "Terms & Condition" },
+                { label: "Payment Plans" },
+                { label: "Return & Exchange" },
+                { label: "Track Order" },
+            ],
         },
     ];
 
     return (
-        <div className="p-14 px-4 bg-black">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-3">
-                <div onClick={() => router.push("/")} className="font-semibold text-xl lg:text-3xl cursor-pointer font-montserrat text-white">
-                    B2C Jewellery
-                </div>
+        <div className="relative px-6 py-10 md:py-14">
+            <div className="absolute inset-0">
+                <Image
+                    src={background}
+                    alt="background"
+                    fill
+                    className="object-cover opacity-90"
+                    priority
+                />
+            </div>
+            <div className="relative grid grid-cols-2 lg:grid-cols-4 mb-6">
                 {footerList.map((section) => (
                     <div key={section.id}>
-                        <h3 className="font-bold text-lg p-2 mb-2 font-montserrat text-white">{section.label}</h3>
-                        <ul className="space-y-1">
+                        <h3 className="font-semibold text-lg mb-3 text-black">{section.label}</h3>
+                        <ul className="space-y-2">
                             {section.list.map((item, index) => (
-                                <li key={index} className="text-gray-600 cursor-pointer transition font-montserrat text-white p-2">
+                                <li key={index} className="cursor-pointer text-black text-md hover:underline">
                                     {item.label}
                                 </li>
                             ))}
                         </ul>
                     </div>
                 ))}
-                <div className='p-2 pl-0'>
-                    <h3 className="font-bold text-lg cursor-pointer font-montserrat text-white">Subscribe</h3>
-                    <h4 className="font-bold text-md cursor-pointer font-montserrat text-white">Get on the Guest List</h4>
-                    <p className="text-sm text-gray-700 cursor-pointer font-montserrat text-white">Perks include $100 off your first order*</p>
-                    <p className="text-sm text-gray-700 cursor-pointer font-montserrat text-white">Plus new product launches, store openings, and more!</p>
-                    <div className="relative flex items-center mt-3 w-full max-w-md">
+                <div>
+                    <h3 className="font-semibold text-lg md:text-xl text-black">Contact Number</h3>
+                    <p className="text-md text-black mt-1">+123 12345678</p>
+                    <h3 className="font-semibold text-lg md:text-xl text-black mt-4">Mail us at</h3>
+                    <div className="flex items-center border border-[#4d6d38] rounded-lg px-3 py-2 mt-3 w-full max-w-xs">
+                        <FaEnvelope className="text-[#4d6d38] mr-2" size={24} />
                         <input
-                            placeholder="Sign Me Up"
+                            placeholder="Enter your email"
                             type="text"
-                            className="w-full border border-gray-400 rounded-md px-4 py-2 text-sm focus:outline-none"
+                            className="w-full bg-transparent text-black placeholder-gray-500 focus:outline-none"
                         />
-                        <button className="absolute right-0 bg-black p-2 rounded-md hover:bg-gray-800 cursor-pointer">
-                            <FaLongArrowAltRight className="text-white" size={20} />
-                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h3 className="font-semibold text-lg md:text-xl text-black">Get Social</h3>
+                    <div className="flex items-center gap-4 mt-3">
+                        <FaFacebook className="text-[#4d6d38] cursor-pointer hover:text-gray-700 transition" size={24} />
+                        <FaInstagram className="text-[#4d6d38] cursor-pointer hover:text-gray-700 transition" size={24} />
+                        <span className="text-black text-md cursor-pointer hover:underline">diamondresinc</span>
                     </div>
                 </div>
             </div>
-            <hr className="border-t border-gray-300 mb-2" />
-            <div className='flex justify-center items-center gap-8 mt-6 flex-wrap'>
-                <p className='cursor-pointer font-montserrat text-white'>© 2025 b2cjewellery.com</p>
-                <p className='cursor-pointer font-montserrat text-white'>Terms & Conditions</p>
-                <p className='cursor-pointer font-montserrat text-white'>Privacy Policy</p>
-                <p className='cursor-pointer font-montserrat text-white'>Do not sell my information</p>
-                <p className='cursor-pointer font-montserrat text-white'>Site Map</p>
+            <hr className="relative border-t border-gray-300 mb-4" />
+            <div className="relative flex justify-center">
+                <p className="text-[#4d6d38] text-md">&copy; 2025 Diamond Atelier. All rights reserved.</p>
             </div>
         </div>
     );

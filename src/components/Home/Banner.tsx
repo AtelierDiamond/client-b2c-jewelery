@@ -1,14 +1,32 @@
+"use client";
+import Image from "next/image";
+import banner from "../../../public/images/banner/Home Page Banner.png";
+
 function Banner() {
   return (
-    <div className="relative w-full h-[70vh]">
-      <video
-        className="absolute inset-0 w-full h-full object-cover opacity-90"
-        autoPlay
-        muted
-        loop
-      >
-        <source src="https://media-hosting.imagekit.io//5345e8d45d4f48fd/uri_ifs___V_qI7b9jpU4vQggmlFKbeWOJnsAS8gMGRYNc6NPaQOhag%20-%20ROTATE%20-%20Videobolt.net.mp4?Expires=1831720461&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=La-2xvl7Z8omETg9Yk3OrmF12yPlktYcyEdbprz~ifJ5exkJImRqH~Xvctwlomm9LeRJdL~CBMgnaoSCzlmgs3atPBn-Sr7uOv6J2nX75G8Z2lZCgbh5IDcLB3~swf2RaQe3SoblmDd6G~EdIUt2YPZGmsyL3SlqXog0VGhyGoEgqPv4ESD47-hwOq9lE-IotcJkdwleK3Pule~iUFH6cyKCS3SET2r4HydRqzjm1oJS9UOju5HkbuDhmdX0-4iO0PvlXw-R4ZoEoqhq7w1L7YLd-BpGN2H1pQUy6nRjna546vfjAr3MGY6h8ZOWB-1nqm1TbFHpWc9OTI~kmOJXqg__" type="video/mp4" />
-      </video>
+    <div className="relative w-full h-[70vh] flex items-center font-montserrat">
+      <Image
+        src={banner}
+        alt="Banner Image"
+        layout="fill"
+        objectFit="cover"
+        className="opacity-90"
+        priority
+      />
+      <div className="absolute left-10 md:left-20 lg:left-28 max-w-lg text-left text-black">
+        <h2 className="text-4xl xl:text-5xl font-serif font-semibold text-[#f8f3e9]">
+          Minimal Collection
+        </h2>
+        <p className="mt-6 text-lg xl:text-2xl leading-relaxed text-[#f8f3e9]">
+          Diamond Forest offers lab diamond jewelry for occasions big and small.
+          Discover gifts worth falling for, designed by award-winning artists.
+        </p>
+        <div className="mt-8">
+          <button className="bg-white text-[#4d6d38] text-sm md:text-lg font-medium rounded-md px-1 hover:bg-gray-200 transition">
+            SHOP NOW
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

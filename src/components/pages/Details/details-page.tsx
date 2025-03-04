@@ -56,19 +56,19 @@ function ProductDetail() {
            <div className="flex gap-4 mt-5">
                <div className="w-1/2">
                   <h1>Color:</h1>
-                  <Selector options={color} customClass="bg-black text-white"/>
+                  <Selector options={color} customClass="bg-white text-black"/>
                </div>
                <div className="w-1/2">
                   <h1>Clarity:</h1>
-                  <Selector options={color} customClass="bg-black text-white"/>
+                  <Selector options={color} customClass="bg-white text-black"/>
                </div>
            </div>
            <div className="mt-5">
               <h1>Size (MM):</h1>
-              <Selector  options={color} customClass="bg-black text-white" />
+              <Selector options={color} customClass="bg-white border border-[#4d6d38] text-black" />
            </div>
            <div className="text-center">
-           <button className=" mt-14 text-white font-montserrat font-medium px-4 p-1 text-xl bg-black mb-8">Add to cart</button>
+           <button className="mt-14 text-white font-montserrat font-medium px-4 p-1 text-xl bg-[#4d6d38] mb-8">Add to cart</button>
            </div>
         </div>
       </div>
