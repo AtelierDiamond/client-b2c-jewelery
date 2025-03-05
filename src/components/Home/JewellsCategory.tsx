@@ -2,7 +2,6 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import Link from "next/link";
-import background from '../../../public/images/banner/Texture Background.png'
 import ring from "../../../public/images/categories/ring.jpg";
 import bracelet from "../../../public/images/categories/bracelet.jpg";
 import earring from "../../../public/images/categories/earrings.jpg";

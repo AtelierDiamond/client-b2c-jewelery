@@ -21,7 +21,7 @@ function Description() {
             <h2 className="text-2xl xl:text-4xl font-medium text-black">Forest Flower</h2>
             <p className="mt-4 text-sm xl:text-2xl text-black leading-relaxed">
               We offer an exquisite selection of colored jewelry available in a variety of hues. 
-              You'll find a wonderful assortment at Diamond Forest.
+              You&apos;ll find a wonderful assortment at Diamond Forest.
             </p>
           </div>
         </div>

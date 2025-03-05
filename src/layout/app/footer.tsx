@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import { FaInstagram, FaFacebook, FaEnvelope } from "react-icons/fa";
-import background from "../../../public/images/banner/Texture Background.png";
 
 function Footer() {
     const footerList = [
@@ -68,7 +66,6 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            {/* <hr className="relative border-t border-gray-300 mb-4" /> */}
             <div className="relative flex justify-center">
                 <p className="text-[#d9d1bc] text-md">&copy; 2025 Diamond Atelier. All rights reserved.</p>
             </div>
