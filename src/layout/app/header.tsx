@@ -1,492 +1,65 @@
-"use client"
+"use client";
+
 import React, { useState } from "react";
-import { IoClose } from "react-icons/io5";
-import { CiHeart } from "react-icons/ci";
-import { BiUser } from "react-icons/bi";
-import { PiShoppingCartSimple } from "react-icons/pi";
-import Menu from "../header/menu";
-import round from "@/../public/images/DiamondShapes/Round.png";
-import { IoReorderThree } from "react-icons/io5";
+import { IoClose, IoReorderThree } from "react-icons/io5";
+import { FaSearch } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Menu from "../header/menu";
 
 type Route = {
-  id: number,
-  label: string,
-  path: string,
-  list?: any
-}
+  id: number;
+  label: string;
+  path: string;
+};
 
-function Header() {
-
-  const [open, setOpen] = useState<boolean>(false)
+const Header: React.FC = () => {
+  const [open, setOpen] = useState<boolean>(false);
   const router = useRouter();
-  const route: Route[] = [
-    {
-      id: 1, label: "Engagement", path: "/engagement",
-      list: [
-        {
-          title: "Shop by Style",
-          items: [
-            { label: "Solitaire" },
-            { label: "Side Stone" },
-            { label: "Halo" },
-            { label: "Three Stone" },
-            { label: "Hidden Halo" },
-            { label: "Vintage" },
-            { label: "Bridal Sets" },
-            { label: "Gemstone" },
-            { label: "Badgley Mischka" },
-            { label: "Customer Favorites" },
-          ],
-        },
-        {
-          title: "Shop by Shape",
-          items: [
-            { label: "Round", icon: round },
-            { label: "Princess", icon: round },
-            { label: "Oval", icon: round },
-            { label: "Cushion", icon: round },
-            { label: "Radiant", icon: round },
-            { label: "Elongated Cushion", icon: round },
-            { label: "Pear", icon: round },
-            { label: "Emerald", icon: round },
-            { label: "Asscher", icon: round },
-            { label: "Marquise", icon: round },
-            { label: "Heart", icon: round },
-          ],
-        },
-        {
-          title: "Shop by Metal",
-          items: [
-            { label: "Yellow Gold", color: "#FFD700" },
-            { label: "White Gold", color: "#F5F5F5" },
-            { label: "Rose Gold", color: "#E6A1A1" },
-            { label: "Platinum", color: "#D3D3D3" },
-          ],
-        },
-        {
-          title: "Diamond Education",
-          items: [
-            { label: "Learn About the 4Cs" },
-            { label: "Learn About the Diamond Shapes" },
-            { label: "Learn About Lab Grown Diamonds" },
-          ],
-        },
-        {
-          title: "Jewellery Guide",
-          items: [
-            { label: "Engagement Ring Style" },
-            { label: "Find the Perfect Engagement Ring" },
-            { label: "Find the Right Metal" },
-            { label: "Find Your Ring Size" },
-          ],
-        },
-      ]
-    },
-    {
-      id: 2, label: "Wedding", path: "/wedding",
-      list: [
-        {
-          title: "Shop by Style",
-          items: [
-            { label: "Solitaire" },
-            { label: "Side Stone" },
-            { label: "Halo" },
-            { label: "Three Stone" },
-            { label: "Hidden Halo" },
-            { label: "Vintage" },
-            { label: "Bridal Sets" },
-            { label: "Gemstone" },
-            { label: "Badgley Mischka" },
-            { label: "Customer Favorites" },
-          ],
-        },
-        {
-          title: "Shop by Shape",
-          items: [
-            { label: "Round", icon: round },
-            { label: "Princess", icon: round },
-            { label: "Oval", icon: round },
-            { label: "Cushion", icon: round },
-            { label: "Radiant", icon: round },
-            { label: "Elongated Cushion", icon: round },
-            { label: "Pear", icon: round },
-            { label: "Emerald", icon: round },
-            { label: "Asscher", icon: round },
-            { label: "Marquise", icon: round },
-            { label: "Heart", icon: round },
-          ],
-        },
-        {
-          title: "Shop by Metal",
-          items: [
-            { label: "Yellow Gold", color: "#FFD700" },
-            { label: "White Gold", color: "#F5F5F5" },
-            { label: "Rose Gold", color: "#E6A1A1" },
-            { label: "Platinum", color: "#D3D3D3" },
-          ],
-        },
-        {
-          title: "Diamond Education",
-          items: [
-            { label: "Learn About the 4Cs" },
-            { label: "Learn About the Diamond Shapes" },
-            { label: "Learn About Lab Grown Diamonds" },
-          ],
-        },
-        {
-          title: "Jewellery Guide",
-          items: [
-            { label: "Engagement Ring Style" },
-            { label: "Find the Perfect Engagement Ring" },
-            { label: "Find the Right Metal" },
-            { label: "Find Your Ring Size" },
-          ],
-        },
-      ]
-    },
-    {
-      id: 3, label: "Jewellery", path: "/Jewellery",
-      list: [
-        {
-          title: "Shop by Style",
-          items: [
-            { label: "Solitaire" },
-            { label: "Side Stone" },
-            { label: "Halo" },
-            { label: "Three Stone" },
-            { label: "Hidden Halo" },
-            { label: "Vintage" },
-            { label: "Bridal Sets" },
-            { label: "Gemstone" },
-            { label: "Badgley Mischka" },
-            { label: "Customer Favorites" },
-          ],
-        },
-        {
-          title: "Shop by Shape",
-          items: [
-            { label: "Round", icon: round },
-            { label: "Princess", icon: round },
-            { label: "Oval", icon: round },
-            { label: "Cushion", icon: round },
-            { label: "Radiant", icon: round },
-            { label: "Elongated Cushion", icon: round },
-            { label: "Pear", icon: round },
-            { label: "Emerald", icon: round },
-            { label: "Asscher", icon: round },
-            { label: "Marquise", icon: round },
-            { label: "Heart", icon: round },
-          ],
-        },
-        {
-          title: "Shop by Metal",
-          items: [
-            { label: "Yellow Gold", color: "#FFD700" },
-            { label: "White Gold", color: "#F5F5F5" },
-            { label: "Rose Gold", color: "#E6A1A1" },
-            { label: "Platinum", color: "#D3D3D3" },
-          ],
-        },
-        {
-          title: "Diamond Education",
-          items: [
-            { label: "Learn About the 4Cs" },
-            { label: "Learn About the Diamond Shapes" },
-            { label: "Learn About Lab Grown Diamonds" },
-          ],
-        },
-        {
-          title: "Jewellery Guide",
-          items: [
-            { label: "Engagement Ring Style" },
-            { label: "Find the Perfect Engagement Ring" },
-            { label: "Find the Right Metal" },
-            { label: "Find Your Ring Size" },
-          ],
-        },
-      ]
-    },
-    {
-      id: 4, label: "Diamonds", path: "/diamonds", list: [
-        {
-          title: "Shop by Style",
-          items: [
-            { label: "Solitaire" },
-            { label: "Side Stone" },
-            { label: "Halo" },
-            { label: "Three Stone" },
-            { label: "Hidden Halo" },
-            { label: "Vintage" },
-            { label: "Bridal Sets" },
-            { label: "Gemstone" },
-            { label: "Badgley Mischka" },
-            { label: "Customer Favorites" },
-          ],
-        },
-        {
-          title: "Shop by Shape",
-          items: [
-            { label: "Round", icon: round },
-            { label: "Princess", icon: round },
-            { label: "Oval", icon: round },
-            { label: "Cushion", icon: round },
-            { label: "Radiant", icon: round },
-            { label: "Elongated Cushion", icon: round },
-            { label: "Pear", icon: round },
-            { label: "Emerald", icon: round },
-            { label: "Asscher", icon: round },
-            { label: "Marquise", icon: round },
-            { label: "Heart", icon: round },
-          ],
-        },
-        {
-          title: "Shop by Metal",
-          items: [
-            { label: "Yellow Gold", color: "#FFD700" },
-            { label: "White Gold", color: "#F5F5F5" },
-            { label: "Rose Gold", color: "#E6A1A1" },
-            { label: "Platinum", color: "#D3D3D3" },
-          ],
-        },
-        {
-          title: "Diamond Education",
-          items: [
-            { label: "Learn About the 4Cs" },
-            { label: "Learn About the Diamond Shapes" },
-            { label: "Learn About Lab Grown Diamonds" },
-          ],
-        },
-        {
-          title: "Jewellery Guide",
-          items: [
-            { label: "Engagement Ring Style" },
-            { label: "Find the Perfect Engagement Ring" },
-            { label: "Find the Right Metal" },
-            { label: "Find Your Ring Size" },
-          ],
-        },
-      ]
-    },
-    {
-      id: 5, label: "Custom", path: "/custom", list: [
-        {
-          title: "Shop by Style",
-          items: [
-            { label: "Solitaire" },
-            { label: "Side Stone" },
-            { label: "Halo" },
-            { label: "Three Stone" },
-            { label: "Hidden Halo" },
-            { label: "Vintage" },
-            { label: "Bridal Sets" },
-            { label: "Gemstone" },
-            { label: "Badgley Mischka" },
-            { label: "Customer Favorites" },
-          ],
-        },
-        {
-          title: "Shop by Shape",
-          items: [
-            { label: "Round", icon: round },
-            { label: "Princess", icon: round },
-            { label: "Oval", icon: round },
-            { label: "Cushion", icon: round },
-            { label: "Radiant", icon: round },
-            { label: "Elongated Cushion", icon: round },
-            { label: "Pear", icon: round },
-            { label: "Emerald", icon: round },
-            { label: "Asscher", icon: round },
-            { label: "Marquise", icon: round },
-            { label: "Heart", icon: round },
-          ],
-        },
-        {
-          title: "Shop by Metal",
-          items: [
-            { label: "Yellow Gold", color: "#FFD700" },
-            { label: "White Gold", color: "#F5F5F5" },
-            { label: "Rose Gold", color: "#E6A1A1" },
-            { label: "Platinum", color: "#D3D3D3" },
-          ],
-        },
-        {
-          title: "Diamond Education",
-          items: [
-            { label: "Learn About the 4Cs" },
-            { label: "Learn About the Diamond Shapes" },
-            { label: "Learn About Lab Grown Diamonds" },
-          ],
-        },
-        {
-          title: "Jewellery Guide",
-          items: [
-            { label: "Engagement Ring Style" },
-            { label: "Find the Perfect Engagement Ring" },
-            { label: "Find the Right Metal" },
-            { label: "Find Your Ring Size" },
-          ],
-        },
-      ]
-    },
-    {
-      id: 6, label: "Collections", path: "/collections", list: [
-        {
-          title: "Shop by Style",
-          items: [
-            { label: "Solitaire" },
-            { label: "Side Stone" },
-            { label: "Halo" },
-            { label: "Three Stone" },
-            { label: "Hidden Halo" },
-            { label: "Vintage" },
-            { label: "Bridal Sets" },
-            { label: "Gemstone" },
-            { label: "Badgley Mischka" },
-            { label: "Customer Favorites" },
-          ],
-        },
-        {
-          title: "Shop by Shape",
-          items: [
-            { label: "Round", icon: round },
-            { label: "Princess", icon: round },
-            { label: "Oval", icon: round },
-            { label: "Cushion", icon: round },
-            { label: "Radiant", icon: round },
-            { label: "Elongated Cushion", icon: round },
-            { label: "Pear", icon: round },
-            { label: "Emerald", icon: round },
-            { label: "Asscher", icon: round },
-            { label: "Marquise", icon: round },
-            { label: "Heart", icon: round },
-          ],
-        },
-        {
-          title: "Shop by Metal",
-          items: [
-            { label: "Yellow Gold", color: "#FFD700" },
-            { label: "White Gold", color: "#F5F5F5" },
-            { label: "Rose Gold", color: "#E6A1A1" },
-            { label: "Platinum", color: "#D3D3D3" },
-          ],
-        },
-        {
-          title: "Diamond Education",
-          items: [
-            { label: "Learn About the 4Cs" },
-            { label: "Learn About the Diamond Shapes" },
-            { label: "Learn About Lab Grown Diamonds" },
-          ],
-        },
-        {
-          title: "Jewellery Guide",
-          items: [
-            { label: "Engagement Ring Style" },
-            { label: "Find the Perfect Engagement Ring" },
-            { label: "Find the Right Metal" },
-            { label: "Find Your Ring Size" },
-          ],
-        },
-      ]
-    },
-    {
-      id: 7, label: "Education", path: "/education", list: [
-        {
-          title: "Shop by Style",
-          items: [
-            { label: "Solitaire" },
-            { label: "Side Stone" },
-            { label: "Halo" },
-            { label: "Three Stone" },
-            { label: "Hidden Halo" },
-            { label: "Vintage" },
-            { label: "Bridal Sets" },
-            { label: "Gemstone" },
-            { label: "Badgley Mischka" },
-            { label: "Customer Favorites" },
-          ],
-        },
-        {
-          title: "Shop by Shape",
-          items: [
-            { label: "Round", icon: round },
-            { label: "Princess", icon: round },
-            { label: "Oval", icon: round },
-            { label: "Cushion", icon: round },
-            { label: "Radiant", icon: round },
-            { label: "Elongated Cushion", icon: round },
-            { label: "Pear", icon: round },
-            { label: "Emerald", icon: round },
-            { label: "Asscher", icon: round },
-            { label: "Marquise", icon: round },
-            { label: "Heart", icon: round },
-          ],
-        },
-        {
-          title: "Shop by Metal",
-          items: [
-            { label: "Yellow Gold", color: "#FFD700" },
-            { label: "White Gold", color: "#F5F5F5" },
-            { label: "Rose Gold", color: "#E6A1A1" },
-            { label: "Platinum", color: "#D3D3D3" },
-          ],
-        },
-        {
-          title: "Diamond Education",
-          items: [
-            { label: "Learn About the 4Cs" },
-            { label: "Learn About the Diamond Shapes" },
-            { label: "Learn About Lab Grown Diamonds" },
-          ],
-        },
-        {
-          title: "Jewellery Guide",
-          items: [
-            { label: "Engagement Ring Style" },
-            { label: "Find the Perfect Engagement Ring" },
-            { label: "Find the Right Metal" },
-            { label: "Find Your Ring Size" },
-          ],
-        },
-      ]
-    },
+
+  const routes: Route[] = [
+    { id: 1, label: "Home", path: "/" },
+    { id: 2, label: "About", path: "#" },
   ];
 
   return (
-    <header id="siteHeader" className="p-4 font-montserrat sticky  z-50">
-      <div id="logoHeader" className="flex justify-between items-center ">
-        {open ? (
-          <IoClose className="lg:hidden" size={25} onClick={() => setOpen(false)} />
-        ) : (
-          <IoReorderThree className="lg:hidden" size={25} onClick={() => setOpen(true)} />
-        )}
-        {/* <div className="lg:flex lg:gap-4 hidden lg:relative lg:right-20">
-          <span className="flex items-center gap-1 text-xs opacity-80 cursor-pointer">
-            <IoDiamondSharp /> CONTACT US
-          </span>
-          <span className="flex items-center gap-1 text-xs opacity-80 cursor-pointer">
-            <IoLocationOutline /> STORE LOCATOR
-          </span>
-        </div> */}
-        <div onClick={() => router.push("/")} className="font-semibold text-md lg:text-3xl relative cursor-pointer">
-          B2C Jewellery
+    <>
+      <header className="absolute top-4 left-0 w-full z-50 font-montserrat text-black">
+        <div className="flex justify-between items-center lg:px-32 px-6 py-4">
+          <button onClick={() => setOpen(!open)} className="lg:hidden">
+            {open ? (
+              <IoClose className="text-black" size={25} />
+            ) : (
+              <IoReorderThree className="text-black" size={25} />
+            )}
+          </button>
+          <div className="hidden lg:block">
+            <Menu route={routes} />
+          </div>
+          
+          <h1
+            className="font-semibold text-md lg:text-3xl cursor-pointer"
+            onClick={() => router.push("/")}
+          >
+            B2C Jewellery
+          </h1>
+          <div className="relative w-32 lg:w-48">
+            <input
+              type="text"
+              placeholder="Search"
+              className="w-full bg-transparent text-black shadow-md rounded-full text-center border border-black placeholder:text-black text-sm lg:text-md px-3 py-1"
+            />
+            <FaSearch className="absolute right-3 top-2 text-black cursor-pointer" size={12} />
+          </div>
         </div>
-        <div className="flex gap-4 items-center">
-          <CiHeart size={20} />
-          <BiUser size={20} />
-          <PiShoppingCartSimple size={20} />
-        </div>
-      </div>
-      <div className="hidden lg:block">
-        <Menu route={route} />
-      </div>
-      <div className="absolute start-0 p-2 bg-white w-full lg:hidden">
-        {open && <Menu route={route} />}
-      </div>
-      {/* <hr className="border-t border-gray-300 mb-2" /> */}
-    </header>
+      </header>
+      {open && (
+            <div className="fixed inset-0 h-[50vh] bg-white z-40 flex items-center justify-center lg:hidden">
+              <Menu route={routes} />
+            </div>
+          )}
+
+    </>
   );
-}
+};
 
 export default Header;

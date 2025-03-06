@@ -16,23 +16,23 @@ type Item = {
 
 function JewellsCategory() {
   const categoryImages: Item[] = [
+    { img: earring, alt: "EARRING" },
     { img: ring, alt: "RING" },
     { img: bracelet, alt: "BRACELET" },
-    { img: earring, alt: "EARRING" },
-    { img: necklace, alt: "NECKLACE" },
     { img: pendant, alt: "PENDANT" },
+    { img: necklace, alt: "NECKLACE" },
   ];
 
   return (
-    <div className="w-full px-4 font-montserrat relative mt-4">
-      <Image
+    <div className="w-full px-4 font-montserrat relative mt-4 mb-4">
+      {/* <Image
         src={background}
         alt="background Image"
         layout="fill"
         objectFit="cover"
         className="opacity-90"
         priority
-      />
+      /> */}
       <h2 className="relative text-4xl text-black font-medium mb-6 text-center mt-4">
         CATEGORIES
       </h2>

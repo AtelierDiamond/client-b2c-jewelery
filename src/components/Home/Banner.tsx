@@ -1,31 +1,35 @@
 "use client";
 import Image from "next/image";
-import banner from "../../../public/images/banner/Home Page Banner.png";
+import banner from "../../../public/images/categories/Home page.png";
+import gif from "../../../public/images/banner/Untitled-design.gif";
 
 function Banner() {
   return (
-    <div className="relative w-full h-[70vh] flex items-center font-montserrat">
+    <div className="relative w-full h-screen flex items-center justify-center font-montserrat">
       <Image
         src={banner}
         alt="Banner Image"
-        layout="fill"
+        fill
         objectFit="cover"
         className="opacity-90"
         priority
       />
-      <div className="absolute left-10 md:left-20 lg:left-28 max-w-lg text-left text-black">
-        <h2 className="text-4xl xl:text-5xl font-serif font-semibold text-[#f8f3e9]">
-          Minimal Collection
-        </h2>
-        <p className="mt-6 text-lg xl:text-2xl leading-relaxed text-[#f8f3e9]">
-          Diamond Forest offers lab diamond jewelry for occasions big and small.
-          Discover gifts worth falling for, designed by award-winning artists.
+
+      <div className="absolute flex flex-col items-center text-center space-y-1 mt-4">
+        <h3 className="text-xl lg:text-2xl font-medium text-black tracking-wide">
+          DISCOVER
+        </h3>
+        <p className="text-md lg:text-xl font-medium text-black tracking-wide">
+          THE LUXURY OF THE NATURE
         </p>
-        <div className="mt-8">
-          <button className="bg-white text-[#4d6d38] text-sm md:text-lg font-medium rounded-md px-1 hover:bg-gray-200 transition">
-            SHOP NOW
-          </button>
-        </div>
+        <Image
+          src={gif}
+          alt="Overlay GIF"
+          width={300}
+          height={300}
+          className="z-10"
+          priority
+        />
       </div>
     </div>
   );

@@ -32,23 +32,14 @@ function Footer() {
     ];
 
     return (
-        <div className="relative px-6 py-10 md:py-14">
-            <div className="absolute inset-0">
-                <Image
-                    src={background}
-                    alt="background"
-                    fill
-                    className="object-cover opacity-90"
-                    priority
-                />
-            </div>
+        <div className="relative py-8 lg:py-10 bg-[#5f6a3b] px-10">
             <div className="relative grid grid-cols-2 lg:grid-cols-4 mb-6">
                 {footerList.map((section) => (
                     <div key={section.id}>
-                        <h3 className="font-semibold text-lg mb-3 text-black">{section.label}</h3>
+                        <h3 className="font-semibold text-lg mb-3 text-[#d9d1bc]">{section.label}</h3>
                         <ul className="space-y-2">
                             {section.list.map((item, index) => (
-                                <li key={index} className="cursor-pointer text-black text-md hover:underline">
+                                <li key={index} className="cursor-pointer text-[#d9d1bc] text-md hover:underline">
                                     {item.label}
                                 </li>
                             ))}
@@ -56,30 +47,30 @@ function Footer() {
                     </div>
                 ))}
                 <div>
-                    <h3 className="font-semibold text-lg md:text-xl text-black xl:mt-0 mt-6">Contact Number</h3>
-                    <p className="text-md text-black mt-1">+123 12345678</p>
-                    <h3 className="font-semibold text-lg md:text-xl text-black mt-6">Mail us at</h3>
-                    <div className="flex items-center border border-[#4d6d38] rounded-lg px-3 py-2 mt-3 w-full max-w-xs">
-                        <FaEnvelope className="text-[#4d6d38] mr-2" size={24} />
+                    <h3 className="font-semibold text-lg lg:text-lg text-[#d9d1bc] lg:mt-0 mt-6 mb-3">Contact Number</h3>
+                    <p className="text-md text-[#d9d1bc]">+123 12345678</p>
+                    <h3 className="font-semibold text-lg lg:text-lg text-[#d9d1bc] mt-6 mb-3">Mail us at</h3>
+                    <div className="flex items-center border border-[#d9d1bc] rounded-lg px-3 py-2 w-full max-w-xs">
+                        <FaEnvelope className="text-[#d9d1bc] mr-2" size={24} />
                         <input
                             placeholder="Enter your email"
                             type="text"
-                            className="w-full bg-transparent text-black placeholder-gray-500 focus:outline-none"
+                            className="w-full bg-transparent text-[#d9d1bc] placeholder-[#d9d1bc] focus:outline-none"
                         />
                     </div>
                 </div>
                 <div>
-                    <h3 className="font-semibold text-lg md:text-xl text-black xl:mt-0 mt-6">Get Social</h3>
-                    <div className="flex items-center gap-4 mt-1">
-                        <FaFacebook className="text-[#4d6d38] cursor-pointer hover:text-gray-700 transition" size={24} />
-                        <FaInstagram className="text-[#4d6d38] cursor-pointer hover:text-gray-700 transition" size={24} />
-                        <span className="text-black text-md cursor-pointer hover:underline">diamondresinc</span>
+                    <h3 className="font-semibold text-lg lg:text-lg text-[#d9d1bc] lg:mt-0 mb-3">Get Social</h3>
+                    <div className="flex items-center gap-4">
+                        <FaFacebook className="text-[#d9d1bc] cursor-pointer hover:text-[#cbc2b5] transition" size={24} />
+                        <FaInstagram className="text-[#d9d1bc] cursor-pointer hover:text-[#cbc2b5] transition" size={24} />
+                        <span className="text-[#d9d1bc] text-md cursor-pointer hover:underline">diamondforestinc</span>
                     </div>
                 </div>
             </div>
-            <hr className="relative border-t border-gray-300 mb-4" />
+            {/* <hr className="relative border-t border-gray-300 mb-4" /> */}
             <div className="relative flex justify-center">
-                <p className="text-[#4d6d38] text-md">&copy; 2025 Diamond Atelier. All rights reserved.</p>
+                <p className="text-[#d9d1bc] text-md">&copy; 2025 Diamond Atelier. All rights reserved.</p>
             </div>
         </div>
     );
