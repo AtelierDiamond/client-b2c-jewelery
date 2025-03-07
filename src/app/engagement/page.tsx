@@ -7,9 +7,10 @@ import { TbAdjustmentsHorizontal } from 'react-icons/tb'
 
 function Page() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    
     return (
         <>
-            <div className='font-montserrat'>
+            <div className='font-montserrat relative pt-24'>
                 <div className='mx-auto mt-4'>
                     <p className='flex justify-center items-center text-center text-sm cursor-pointer font-semibold text-md'>Lab Grown Diamond</p>
                     <h1 className='flex justify-center items-center text-center text-2xl cursor-pointer font-semibold text-md'>Engagement Ring</h1>
