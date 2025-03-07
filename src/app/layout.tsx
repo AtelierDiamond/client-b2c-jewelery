@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "B2C Jewellery",
-  description: "wide range of jewelry collections",
+  description: "wide range of jewellery collections",
 };
 
 export default function RootLayout({

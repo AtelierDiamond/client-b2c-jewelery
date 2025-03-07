@@ -14,12 +14,11 @@ function Banner() {
         className="opacity-90"
         priority
       />
-
-      <div className="absolute flex flex-col items-center text-center space-y-1 mt-4">
-        <h3 className="text-xl lg:text-2xl font-medium text-black tracking-wide">
+      <div className="absolute flex flex-col items-center text-center space-y-1 lg:mt-10">
+        <h3 className="text-md md:text-xl lg:text-2xl font-medium text-black tracking-wide">
           DISCOVER
         </h3>
-        <p className="text-md lg:text-xl font-medium text-black tracking-wide">
+        <p className="text-sm md:text-md lg:text-xl font-medium text-black tracking-wide">
           THE LUXURY OF THE NATURE
         </p>
         <Image
@@ -27,7 +26,7 @@ function Banner() {
           alt="Overlay GIF"
           width={300}
           height={300}
-          className="z-10"
+          className="z-10 w-64 md:w-48 lg:w-full"
           priority
         />
       </div>

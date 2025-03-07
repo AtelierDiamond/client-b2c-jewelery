@@ -10,7 +10,7 @@ function Page() {
     return (
         <>
             <div className='font-montserrat'>
-                <div className='mx-auto mt-5'>
+                <div className='mx-auto mt-4'>
                     <p className='flex justify-center items-center text-center text-sm cursor-pointer font-semibold text-md'>Lab Grown Diamond</p>
                     <h1 className='flex justify-center items-center text-center text-2xl cursor-pointer font-semibold text-md'>Engagement Ring</h1>
                 </div>

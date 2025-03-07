@@ -4,33 +4,33 @@ import background from "../../../public/images/banner/description-background.png
 
 function Description() {
   return (
-    <div className="relative h-screen bg-white font-montserrat">
-      <div className="inset-0 -z-10">
+    <div className="min-h-screen bg-white font-montserrat relative flex flex-col">
+      <div className="absolute inset-0 w-full h-full">
         <Image
           src={background}
           alt="Background Image"
           layout="fill"
           objectFit="cover"
-          className="opacity-90"
+          className="w-full h-full object-cover opacity-90"
           priority
         />
       </div>
-      <div className="relative w-full py-12 px-6 lg:px-12 flex flex-col gap-16">
-        <div className="flex flex-col lg:flex-row items-center lg:justify-center gap-8">
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <h2 className="text-2xl xl:text-4xl font-medium text-black">Forest Flower</h2>
-            <p className="mt-4 text-sm xl:text-2xl text-black leading-relaxed">
-              We offer an exquisite selection of colored jewelry available in a variety of hues. 
+      <div className="relative flex flex-col justify-center items-center flex-grow py-12 px-4 sm:px-6 md:px-12 gap-12 md:gap-16">
+        <div className="flex flex-col md:flex-row items-center md:justify-center gap-6 md:gap-8">
+          <div className="md:w-1/2 text-center md:text-left p-4 rounded-lg">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-black">Forest Flower</h2>
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-2xl text-black leading-relaxed">
+              We offer an exquisite selection of colored jewellery available in a variety of hues.
               You&apos;ll find a wonderful assortment at Diamond Forest.
             </p>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row-reverse items-center lg:items-start gap-8 mt-32">
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <h2 className="text-2xl xl:text-4xl font-medium text-black">White Gold & Yellow Gold</h2>
-            <p className="mt-4 text-sm xl:text-2xl text-black leading-relaxed">
-              We offer an extensive collection of statement jewelry, giving you the opportunity 
-              to choose and create a personalized set across all categories of jewelry.
+        <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-6 lg:gap-8 lg:mt-32 mt-10">
+          <div className="md:w-1/2 text-center md:text-left p-4 rounded-lg">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-black">White Gold & Yellow Gold</h2>
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-2xl text-black leading-relaxed">
+              We offer an extensive collection of statement jewellery, giving you the opportunity
+              to choose and create a personalized set across all categories of jewellery.
             </p>
           </div>
         </div>

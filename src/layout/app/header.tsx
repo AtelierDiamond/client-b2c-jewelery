@@ -24,20 +24,23 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="absolute top-4 left-0 w-full z-50 font-montserrat text-black">
-        <div className="flex justify-between items-center lg:px-32 px-6 py-4">
-          <button onClick={() => setOpen(!open)} className="lg:hidden">
+        <div className="flex justify-between items-center px-6 lg:px-32 py-4 relative">
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden z-50"
+            aria-label="Toggle menu"
+          >
             {open ? (
               <IoClose className="text-black" size={25} />
             ) : (
               <IoReorderThree className="text-black" size={25} />
             )}
           </button>
-          <div className="hidden lg:block">
+          <nav className="hidden lg:block">
             <Menu route={routes} />
-          </div>
-          
+          </nav>
           <h1
-            className="font-semibold text-md lg:text-3xl cursor-pointer"
+            className="font-semibold text-md md:text-xl lg:text-3xl cursor-pointer"
             onClick={() => router.push("/")}
           >
             B2C Jewellery
@@ -46,18 +49,27 @@ const Header: React.FC = () => {
             <input
               type="text"
               placeholder="Search"
-              className="w-full bg-transparent text-black shadow-md rounded-full text-center border border-black placeholder:text-black text-sm lg:text-md px-3 py-1"
+              className="w-full bg-transparent text-black shadow-md rounded-full text-center border border-black placeholder:text-black text-sm lg:text-md px-3 py-1 focus:outline-none"
             />
-            <FaSearch className="absolute right-3 top-2 text-black cursor-pointer" size={12} />
+            <FaSearch
+              className="absolute right-3 top-2 text-black cursor-pointer"
+              size={12}
+            />
           </div>
         </div>
       </header>
       {open && (
-            <div className="fixed inset-0 h-[50vh] bg-white z-40 flex items-center justify-center lg:hidden">
-              <Menu route={routes} />
-            </div>
-          )}
-
+        <div className="fixed top-0 left-0 w-2/3 h-screen bg-[#5f6a3b] z-50 flex flex-col items-center justify-center lg:hidden transition-all duration-300">
+          <Menu route={routes} />
+          <button
+            onClick={() => setOpen(false)}
+            className="absolute top-6 left-6"
+            aria-label="Close menu"
+          >
+            <IoClose className="text-[#d9d1bc]" size={30} />
+          </button>
+        </div>
+      )}
     </>
   );
 };
