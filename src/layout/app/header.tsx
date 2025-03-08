@@ -24,7 +24,7 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="absolute top-4 left-0 w-full z-50 font-montserrat text-black">
-        <div className="flex justify-between items-center px-6 lg:px-32 py-4 relative">
+        <div className="flex justify-between items-center px-6 py-4 relative">
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden z-50"

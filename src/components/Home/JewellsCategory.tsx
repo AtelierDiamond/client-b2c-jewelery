@@ -38,7 +38,7 @@ function JewellsCategory() {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
         {categoryImages.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
-            <div className="relative group w-32 h-32 xl:w-64 xl:h-64 overflow-hidden">
+            <div className="relative group w-32 h-36 xl:w-64 xl:h-72 overflow-hidden">
               <Link href={`/engagement?category=${item.alt.toLowerCase()}`} passHref>
                 <Image
                   className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"

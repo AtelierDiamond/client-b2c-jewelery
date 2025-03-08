@@ -4,13 +4,14 @@ import background from "../../../public/images/banner/description-background.png
 
 function Description() {
   return (
-    <div className="min-h-screen bg-white font-montserrat relative flex flex-col">
+    <div className="min-h-screen bg-white font-droid-serif relative flex flex-col">
       <div className="absolute inset-0 w-full h-full">
         <Image
           src={background}
           alt="Background Image"
           layout="fill"
           objectFit="cover"
+          objectPosition="left center"
           className="w-full h-full object-cover opacity-90"
           priority
         />

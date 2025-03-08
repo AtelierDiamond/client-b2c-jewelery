@@ -15,13 +15,13 @@ const Commitment = () => {
     ];
 
     return (
-        <div className="text-center py-14 font-montserrat">
+        <div className="text-center py-14 font-dejavu-serif">
             <h2 className="text-4xl font-medium mb-6">OUR COMMITMENT</h2>
             <div className="flex justify-center gap-8 flex-wrap">
                 {commitmentList.map((item) => (
                     <div key={item.id} className="flex flex-col items-center text-center">
                         {item.icon}
-                        <h3 className="text-xl mt-2 font-medium">{item.title}</h3>
+                        <h3 className="text-xl mt-2 font-medium font-dejavu-serif">{item.title}</h3>
                     </div>
                 ))}
             </div>

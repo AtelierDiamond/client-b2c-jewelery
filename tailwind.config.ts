@@ -14,7 +14,8 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
+        droid: ['var(--droid-serif)'],
+        dejavu: ['var(--dejavu-serif)'],
         montserrat: ['var(--font-montserrat)'],
       },
     },
