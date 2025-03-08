@@ -14,10 +14,10 @@ function Banner() {
         priority
       />
       <div className="absolute flex flex-col items-center text-center space-y-1 mt-36 md:mt-10 xl:mt-32">
-        <h3 className="text-md md:text-xl lg:text-2xl font-medium text-black tracking-wide font-dejavu-serif">
+        <h3 className="text-md md:text-xl xl:text-3xl font-medium text-black tracking-wide font-dejavu-serif">
           DISCOVER
         </h3>
-        <p className="text-sm md:text-md lg:text-xl font-medium text-black tracking-wide font-dejavu-serif">
+        <p className="text-sm md:text-md xl:text-xl font-medium text-black tracking-wide font-dejavu-serif">
           THE LUXURY OF THE NATURE
         </p>
         <Image

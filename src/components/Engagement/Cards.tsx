@@ -39,7 +39,7 @@ const Cards = () => {
                     <Link href={`${pathname}/${item.id}`} className="w-full">
                         <button
                             type="button"
-                            className="w-full bg-[#4d6d38] text-white font-semibold py-2 px-6 mt-3 text-md md:text-lg"
+                            className="w-full bg-[#5f6a3b] text-white font-semibold py-2 px-6 mt-3 text-md md:text-lg"
                         >
                             Add To Cart
                         </button>

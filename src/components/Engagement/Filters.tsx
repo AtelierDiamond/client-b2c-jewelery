@@ -151,7 +151,7 @@ function Filters() {
                 )}
             </div>
             <div className="text-center mt-6">
-                <button type="submit" className="bg-[#4d6d38] px-6 py-2 xl:text-xl text-md font-[200px] text-white font-montserrat ">View Result</button>
+                <button type="submit" className="bg-[#5f6a3b] px-6 py-2 xl:text-xl text-md font-[200px] text-white font-montserrat ">View Result</button>
             </div>
         </div>
     );

@@ -54,7 +54,7 @@ const ProductDetailSlider: React.FC<PropType> = (props) => {
   }, [emblaMainApi, onSelect]);
 
   return (
-    <div className="embla p-4 items-center">
+    <div className="embla xl:p-4 p-1 items-center">
       {/* Main slider */}
       <div className="embla__viewport rounded-md relative max-w-[400px] max-h-[400px]" ref={emblaMainRef}>
         <div className="embla__container flex">
@@ -75,14 +75,14 @@ const ProductDetailSlider: React.FC<PropType> = (props) => {
         <button
           onClick={onPrevButtonClick}
           disabled={prevBtnDisabled}
-          className="absolute top-1/2 left-2 z-10 -translate-y-1/2 p-2 disabled:opacity-50"
+          className="absolute top-1/2 left-2 z-10 -translate-y-1/2 xl:p-2 disabled:opacity-50"
         >
           <IoIosArrowBack fontSize={22} />
         </button>
         <button
           onClick={onNextButtonClick}
           disabled={nextBtnDisabled}
-          className="absolute top-1/2 right-2 z-10 -translate-y-1/2 p-2 disabled:opacity-50"
+          className="absolute top-1/2 right-2 z-10 -translate-y-1/2 xl:p-2 disabled:opacity-50"
         >
           <IoIosArrowForward fontSize={22} />
         </button>

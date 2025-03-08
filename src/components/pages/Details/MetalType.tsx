@@ -16,8 +16,8 @@ function MetalType({
 
   return (
     <div className="mt-5">
-      <h1>Metal Type:</h1>
-      <div className="flex gap-6">
+      {/* <h1>Metal Type:</h1> */}
+      <div className="flex gap-2">
         {metalType.map((item) => (
           <div
             key={item.id}
@@ -29,9 +29,9 @@ function MetalType({
                 backgroundColor: item.colorCode,
               }}
             >
-              {item.text}
+              {/* {item.text} */}
             </div>
-            <span className="text-xs">{item.title}</span>
+            {/* <span className="text-xs">{item.title}</span> */}
           </div>
         ))}
       </div>
