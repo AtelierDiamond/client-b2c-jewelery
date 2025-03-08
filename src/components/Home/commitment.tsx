@@ -21,7 +21,7 @@ const Commitment = () => {
                 {commitmentList.map((item) => (
                     <div key={item.id} className="flex flex-col items-center text-center">
                         {item.icon}
-                        <h3 className="text-xl mt-2 font-medium font-dejavu-serif">{item.title}</h3>
+                        <h3 className="xl:text-xl md:text-md sm:text-sm text-xs mt-2 font-medium font-dejavu-serif">{item.title}</h3>
                     </div>
                 ))}
             </div>

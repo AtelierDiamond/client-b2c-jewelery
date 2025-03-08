@@ -59,10 +59,10 @@ function Footer() {
                 </div>
                 <div>
                     <h3 className="font-semibold text-lg lg:text-lg text-[#d9d1bc] lg:mt-0 mt-6 mb-3">Get Social</h3>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-1">
                         <FaFacebook className="text-[#d9d1bc] cursor-pointer hover:text-[#cbc2b5] transition" size={24} />
                         <FaInstagram className="text-[#d9d1bc] cursor-pointer hover:text-[#cbc2b5] transition" size={24} />
-                        <span className="text-[#d9d1bc] lg:text-md text-sm cursor-pointer hover:underline">diamondforestinc</span>
+                        <span className="text-[#d9d1bc] xl:text-md md:text-md sm:text-sm text-xs cursor-pointer hover:underline">diamondforestinc</span>
                     </div>
                 </div>
             </div>
