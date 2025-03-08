@@ -13,7 +13,7 @@ function Banner() {
         className="object-cover"
         priority
       />
-      <div className="absolute flex flex-col items-center text-center space-y-1 mt-36 lg:mt-26">
+      <div className="absolute flex flex-col items-center text-center space-y-1 mt-36 md:mt-10 xl:mt-32">
         <h3 className="text-md md:text-xl lg:text-2xl font-medium text-black tracking-wide font-dejavu-serif">
           DISCOVER
         </h3>
@@ -25,7 +25,7 @@ function Banner() {
           alt="Overlay GIF"
           width={100}
           height={100}
-          className="z-10 w-48 md:w-48 lg:w-64"
+          className="z-10 w-48 md:w-48 xl:w-64"
           priority
         />
       </div>
