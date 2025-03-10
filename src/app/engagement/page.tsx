@@ -6,12 +6,23 @@ import React, { useState } from 'react'
 import { RxCross2 } from 'react-icons/rx';
 import { TbAdjustmentsHorizontal } from 'react-icons/tb'
 import protrait from '../../../public/images/engagement/portrait.png'
+// import { FaArrowLeft } from 'react-icons/fa';
+// import { useRouter } from 'next/navigation';
 
 function Page() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    // const { back } = useRouter();
 
     return (
         <>
+            {/* <div className="xl:pt-32 pt-24 xl:px-8 px-4 pb-6">
+        <button
+          onClick={() => back()}
+          className="m-2 text-xl border-0 bg-white flex items-center font-serif text-[#5f6a3b]"
+        >
+          <FaArrowLeft size={22} />
+        </button>
+      </div> */}
             <div className='font-montserrat relative pt-24'>
                 <div className="flex flex-col md:flex-row justify-between items-center mx-auto mt-6 px-4">
                     <div className="text-center md:text-left">
