@@ -10,6 +10,8 @@ function Filters() {
     const [toggleWidth, setToggleWidth] = useState(true);
     const [toggleGemstone, setToggleGemstone] = useState(true);
     const [toggleEngravable, setToggleEngravable] = useState(true);
+    const [selectedMetals, setSelectedMetals] = useState<number[]>([]);
+    const [selectedStyles, setSelectedStyles] = useState<number[]>([]);
 
     const metal = [
         { id: 1, colorCode: "#ffffff", text: "14K", title: "White gold" },
@@ -40,36 +42,64 @@ function Filters() {
         { id: 1, title: "Engravable Only" }
     ];
 
+    const handleMetalSelection = (id:number) => {
+        setSelectedMetals((prev) =>
+            prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+        );
+    };
+
+    const handleStyleSelection = (id:number) => {
+        setSelectedStyles((prev) =>
+            prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+        );
+    };
     return (
         <div className='m-4 font-montserrat'>
             <div>
                 <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleMetal(!toggleMetal)}>
-                    <p className="xl:text-xl text-md font-semibold font-montserrat text-black">Metal</p>
+                    <p className="xl:text-xl text-md font-semibold text-black">Metal</p>
                     <Icon icon={toggleMetal ? "mdi:chevron-up" : "mdi:chevron-down"} className="text-xl text-black" />
                 </div>
                 {toggleMetal && (
                     <div className='flex mt-4 gap-3 flex-wrap'>
                         {metal.map(item => (
-                            <div key={item.id} className='flex flex-col items-center'>
-                                <div className="rounded-full border border-gray-300 h-14 w-14" style={{ backgroundColor: item.colorCode }}></div>
-                                <div className="xl:text-md text-sm text-black w-full text-center mt-1 font-montserrat font-normal">{item.title}</div>
-                            </div>
+                            <label key={item.id} className='flex flex-col items-center cursor-pointer'>
+                                <input
+                                    type="checkbox"
+                                    checked={selectedMetals.includes(item.id)}
+                                    onChange={() => handleMetalSelection(item.id)}
+                                    className="hidden"
+                                />
+                                <div 
+                                    className={`rounded-full border h-14 w-14 flex items-center justify-center ${selectedMetals.includes(item.id) ? 'border-black border-2' : 'border-gray-300'}`}
+                                    style={{ backgroundColor: item.colorCode }}
+                                ></div>
+                                <div className="xl:text-md text-sm text-black text-center mt-1">{item.title}</div>
+                            </label>
                         ))}
                     </div>
                 )}
             </div>
             <div className='mt-6'>
                 <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleStyle(!toggleStyle)}>
-                    <p className="xl:text-xl text-md font-semibold font-montserrat text-black">Style</p>
+                    <p className="xl:text-xl text-md font-semibold text-black">Style</p>
                     <Icon icon={toggleStyle ? "mdi:chevron-up" : "mdi:chevron-down"} className="text-xl text-black" />
                 </div>
                 {toggleStyle && (
                     <div className='flex gap-4 mt-4 flex-wrap'>
                         {style.map(item => (
-                            <div key={item.id} className='flex flex-col items-center'>
-                                <Image src={item.img} alt={item.alt} className="xl:w-10 xl:h-10 w-8 h-8" height={24} width={24} />
-                                <div className="xl:text-md text-sm text-black w-auto text-center font-normal mt-1 font-montserrat">{item.title}</div>
-                            </div>
+                            <label key={item.id} className='flex flex-col items-center cursor-pointer'>
+                                <input
+                                    type="checkbox"
+                                    checked={selectedStyles.includes(item.id)}
+                                    onChange={() => handleStyleSelection(item.id)}
+                                    className="hidden"
+                                />
+                                <div className={`p-1 rounded-full ${selectedStyles.includes(item.id) ? 'border-black border-2' : 'border-transparent border'}`}>
+                                    <Image src={item.img} alt={item.alt} className="xl:w-10 xl:h-10 w-8 h-8 rounded-full" height={24} width={24} />
+                                </div>
+                                <div className="xl:text-md text-sm text-black text-center mt-1">{item.title}</div>
+                            </label>
                         ))}
                     </div>
                 )}
