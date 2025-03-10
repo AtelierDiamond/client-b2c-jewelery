@@ -16,6 +16,8 @@ type PropType = {
   options?: EmblaOptionsType;
 };
 
+const AUTOPLAY_INTERVAL = 2000;
+
 const ProductDetailSlider: React.FC<PropType> = (props) => {
   const { slides, options } = props;
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -52,6 +54,20 @@ const ProductDetailSlider: React.FC<PropType> = (props) => {
 
     emblaMainApi.on("select", onSelect).on("reInit", onSelect);
   }, [emblaMainApi, onSelect]);
+
+  useEffect(() => {
+    if (!emblaMainApi) return;
+    
+    const autoplay = setInterval(() => {
+      if (emblaMainApi.canScrollNext()) {
+        emblaMainApi.scrollNext();
+      } else {
+        emblaMainApi.scrollTo(0);
+      }
+    }, AUTOPLAY_INTERVAL);
+    
+    return () => clearInterval(autoplay);
+  }, [emblaMainApi]);
 
   return (
     <div className="embla xl:p-4 p-1 items-center">
