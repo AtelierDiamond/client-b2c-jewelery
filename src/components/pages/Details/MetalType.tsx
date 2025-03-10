@@ -1,38 +1,47 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 type MetalType = {
-    id:number, 
-    colorCode:string,
-    text:string,
-    title:string 
-} 
+  id: number;
+  colorCode: string;
+  text: string;
+  title: string;
+};
 
-function MetalType({
-    metalType
-}:{
-    metalType: MetalType[]
-}) {
- 
+type MetalTypeProps = {
+  metalType: MetalType[];
+};
+
+function MetalType({ metalType }: MetalTypeProps) {
+  const [selectedMetals, setSelectedMetals] = useState<number[]>([]);
+
+  const handleCheckboxChange = (id: number) => {
+    setSelectedMetals((prev) =>
+      prev.includes(id) ? prev.filter((metalId) => metalId !== id) : [...prev, id]
+    );
+  };
 
   return (
     <div className="mt-5">
-      {/* <h1>Metal Type:</h1> */}
       <div className="flex gap-2">
         {metalType.map((item) => (
-          <div
-            key={item.id}
-            className="flex flex-col justify-center items-center"
-          >
+          <label key={item.id} className="flex flex-col items-center cursor-pointer">
+            <input
+              type="checkbox"
+              checked={selectedMetals.includes(item.id)}
+              onChange={() => handleCheckboxChange(item.id)}
+              className="hidden"
+            />
             <div
-              className={`rounded-full text-sm text-black h-12 w-12 border border-red-200 flex items-center justify-center`}
-              style={{
-                backgroundColor: item.colorCode,
-              }}
-            >
-              {/* {item.text} */}
-            </div>
-            {/* <span className="text-xs">{item.title}</span> */}
-          </div>
+              className={`rounded-full text-sm text-black h-12 w-12 border flex items-center justify-center transition-all ${
+                selectedMetals.includes(item.id)
+                  ? "border-black border-2"
+                  : "border-gray-300"
+              }`}
+              style={{ backgroundColor: item.colorCode }}
+            ></div>
+            {/* <span className="text-xs mt-1">{item.title}</span> */}
+          </label>
         ))}
       </div>
     </div>
