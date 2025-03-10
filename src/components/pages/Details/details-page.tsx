@@ -69,7 +69,7 @@ const ProductDetail = () => {
           </div>
         </div>
         <div>
-          <button className="bg-[#5f6a3b] text-white xl:text-lg font-medium px-6 py-2 m-2 xl:m-0 rounded-full shadow-md hover:bg-[#3b562c] transition">
+          <button className="bg-[#5f6a3b] text-white xl:text-lg font-medium px-6 py-2 xl:m-0 xl:mb-4 mb-4 rounded-full shadow-md hover:bg-[#3b562c] transition">
             Add to cart
           </button>
         </div>

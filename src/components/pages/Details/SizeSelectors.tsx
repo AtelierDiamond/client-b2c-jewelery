@@ -7,7 +7,7 @@ function SizeSelectors({ sizes }: { sizes: Size[] }) {
   return (
     <div className="mt-5">
       <h1 className="font-bold">Size (in)</h1>
-      <div className="mb-4">
+      <div className="xl:mb-4">
         {sizes.map((size, index) => (
           <CheckBoxButton key={index} title={size.title} value={size.value} id={size.id}/>
         ))}

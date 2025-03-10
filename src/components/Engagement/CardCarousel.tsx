@@ -1,7 +1,7 @@
 'use client';
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
@@ -23,11 +23,12 @@ const ImageCarousel = ({ link }: { link: string, className: string }) => {
             <div className="relative w-full h-[300px] flex items-center justify-center">
                 <Swiper
                     ref={swiperRef}
-                    modules={[Pagination]}
+                    modules={[Pagination, Autoplay]}
                     pagination={{ clickable: true }}
                     loop
                     grabCursor
                     touchEventsTarget="container"
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
                     className="w-full overflow-hidden h-full"
                 >
                     {images.map((image) => (

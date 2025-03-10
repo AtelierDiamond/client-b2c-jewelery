@@ -36,14 +36,14 @@ const Cards = () => {
                         <span className="font-semibold text-lg text-black">₹1,424</span>
                         <span className="text-gray-400 text-sm line-through ml-2">₹1,499</span>
                     </div>
-                    <Link href={`${pathname}/${item.id}`} className="w-full">
+                    {/* <Link href={`${pathname}/${item.id}`} className="w-full">
                         <button
                             type="button"
                             className="w-full bg-[#5f6a3b] text-white font-semibold py-2 px-6 mt-3 text-md md:text-lg"
                         >
                             Add To Cart
                         </button>
-                    </Link>
+                    </Link> */}
                 </div>
             ))}
         </div>

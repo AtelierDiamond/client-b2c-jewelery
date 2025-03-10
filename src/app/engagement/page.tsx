@@ -45,7 +45,7 @@ function Page() {
                         </select>
                         <Filters />
                     </div>
-                    <div className="flex justify-between items-center cursor-pointer mx-auto gap-10 lg:hidden">
+                    <div className="flex justify-between items-center cursor-pointer mx-auto gap-10 lg:hidden m-4">
                         <div className="flex items-center" onClick={() => setIsOpen(true)}>
                             <h3 className="text-md font-medium">Filter</h3>
                             <TbAdjustmentsHorizontal size={25} />
