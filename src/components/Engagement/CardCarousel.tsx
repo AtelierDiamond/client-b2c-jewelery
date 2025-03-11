@@ -39,7 +39,7 @@ const ImageCarousel = ({ link }: { link: string, className: string }) => {
                                     alt={`Slide ${image.id}`}
                                     width={300}
                                     height={400}
-                                    className="w-full h-auto object-cover shadow-md cursor-pointer rounded-3xl transition-transform duration-600 ease-out hover:scale-110"
+                                    className="w-full h-auto object-cover shadow-md cursor-pointer transition-transform duration-600 ease-out hover:scale-110"
                                 />
                             </Link>
                         </SwiperSlide>

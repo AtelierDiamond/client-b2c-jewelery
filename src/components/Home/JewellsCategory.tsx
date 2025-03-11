@@ -11,15 +11,17 @@ import pendant from "../../../public/images/categories/pendant.jpg";
 type Item = {
   img: StaticImageData;
   alt: string;
+  id:number;
+  path:string;
 };
 
 function JewellsCategory() {
   const categoryImages: Item[] = [
-    { img: earring, alt: "EARRING" },
-    { img: ring, alt: "RING" },
-    { img: bracelet, alt: "BRACELET" },
-    { img: pendant, alt: "PENDANT" },
-    { img: necklace, alt: "NECKLACE" },
+    {id:1, img: earring, alt: "EARRING", path:"#" },
+    {id:2, img: ring, alt: "RING", path:"/engagement" },
+    {id:3, img: bracelet, alt: "BRACELET", path:"/bracelet" },
+    {id:4,img: pendant, alt: "PENDANT", path:"#" },
+    {id:5, img: necklace, alt: "NECKLACE", path:"#" },
   ];
 
   return (
@@ -39,7 +41,7 @@ function JewellsCategory() {
         {categoryImages.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
             <div className="relative group w-32 h-36 xl:w-64 xl:h-72 overflow-hidden">
-              <Link href={`/engagement?category=${item.alt.toLowerCase()}`} passHref>
+              <Link href={`${item.path}?category=${item.alt.toLowerCase()}`} passHref>
                 <Image
                   className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
                   src={item.img}

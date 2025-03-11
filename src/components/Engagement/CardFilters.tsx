@@ -88,8 +88,8 @@ function CardFilters({
                             <div
                                 ref={scrollRefs[title]}
                                 onScroll={() => updateScrollButtons(title)}
-                                className="flex overflow-x-auto scrollbar-none scroll-smooth gap-2 md:gap-3"
-                                style={{ width: '100%', maxWidth: '200px', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                                className="flex overflow-x-auto scrollbar-none scroll-smooth gap-2 md:gap-3 justify-center"
+                                style={{ width: '100%', maxWidth: '180px', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                             >
                                 {items.map((item) => (
                                     <label key={item.id} className="flex flex-col justify-center items-center cursor-pointer">
@@ -103,12 +103,14 @@ function CardFilters({
                                         />
                                         {title === 'Metal' && 'colorCode' in item ? (
                                             <div
-                                                className={`group rounded-full xl:h-6 xl:w-6 w-6 h-6 border ${
-                                                    selected[title] === item.id ? 'border-black' : 'border-gray-300'
-                                                } flex items-center justify-center hover:border-black`}
+                                                className={`group rounded-full xl:h-6 xl:w-6 w-6 h-6 border ${selected[title] === item.id ? 'border-black' : 'border-gray-300'
+                                                    } flex items-center justify-center hover:border-black`}
                                                 style={{ backgroundColor: item.colorCode }}
                                             >
-                                                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs text-black">
+                                                <span
+                                                    className={`transition-opacity duration-200 text-xs text-black ${selected[title] === item.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                                                        }`}
+                                                >
                                                     {item.text}
                                                 </span>
                                             </div>
@@ -142,3 +144,4 @@ function CardFilters({
 }
 
 export default CardFilters;
+    

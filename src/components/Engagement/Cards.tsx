@@ -31,10 +31,6 @@ const Cards = () => {
             { id: 2, colorCode: "#e5ce83", text: "14K", title: "Yellow gold" },
             { id: 3, colorCode: "#e7ba9a", text: "14K", title: "Rose gold" },
             { id: 4, colorCode: "#ffffff", text: "PL", title: "Platinum" },
-            { id: 5, colorCode: "#ffffff", text: "14K", title: "White gold" },
-            { id: 6, colorCode: "#e5ce83", text: "14K", title: "Yellow gold" },
-            { id: 7, colorCode: "#e7ba9a", text: "14K", title: "Rose gold" },
-            { id: 8, colorCode: "#ffffff", text: "PL", title: "Platinum" },
         ];
     
         const shape = [
@@ -101,14 +97,15 @@ const Cards = () => {
     ];
     
         const carat = [
-            { id: 1, text: "0.75" },
-            { id: 2, text: "1" },
-            { id: 3, text: "1.5" },
-            { id: 4, text: "2" },
-            { id: 5, text: "2.5" },
-            { id: 6, text: "3" },
-            { id: 7, text: "3.5" },
-            { id: 8, text: "4" },
+            { id: 1, text: "1" },
+            { id: 2, text: "1.5" },
+            { id: 3, text: "2" },
+            { id: 4, text: "2.5" },
+            { id: 5, text: "3" },
+            { id: 6, text: "3.5" },
+            { id: 7, text: "4" },
+            { id: 8, text: "4.5" },
+            { id: 9, text: "5" },
         ];
 
     return (
@@ -121,7 +118,7 @@ const Cards = () => {
                     <div className="w-full flex justify-center items-center">
                         <ImageCarousel
                             link={`${pathname}/${item.id}`}
-                            className="w-full h-48 object-cover rounded-md transition-transform duration-500 ease-in-out group-hover:scale-110"
+                            className="w-full h-48 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                         />
                     </div>
                     <div className="w-full font-bold mt-2 text-sm md:text-md text-[#332421] hover:text-[#FF5F15] cursor-pointer">
