@@ -6,7 +6,7 @@ type Size = {id:string, value:number, title:string};
 function SizeSelectors({ sizes }: { sizes: Size[] }) {
   return (
     <div className="mt-5">
-      <h1 className="font-bold">Size (in)</h1>
+      <h1 className="font-bold text-[#332421]  hover:text-[#FF5F15]">Size (in)</h1>
       <div className="xl:mb-4">
         {sizes.map((size, index) => (
           <CheckBoxButton key={index} title={size.title} value={size.value} id={size.id}/>

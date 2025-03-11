@@ -47,7 +47,7 @@ const ProductDetail = () => {
       {/* <div className="xl:pt-32 pt-24 xl:px-8 px-4 pb-6">
         <button
           onClick={() => back()}
-          className="m-2 text-xl border-0 bg-white flex items-center font-serif text-[#5f6a3b]"
+          className="m-2 text-xl border-0 bg-white flex items-center font-serif text-[#707C48]"
         >
           <FaArrowLeft size={22} />
         </button>
@@ -57,33 +57,35 @@ const ProductDetail = () => {
           <ProductDetailSlider slides={sliderImages} options={OPTIONS} />
         </div>
         <div className="space-y-4">
-          <h1 className="xl:text-2xl text-xl font-semibold text-[#5f6a3b]">Double Heart Ring</h1>
-          <h2 className="xl:text-xl text-md text-[#5f6a3b] font-medium">$2,350.00</h2>
-          <p className="text-black">Story about the product</p>
+          <h1 className="xl:text-2xl text-xl font-semibold text-[#707C48]">Double Heart Ring</h1>
+          <h2 className="xl:text-xl text-md text-[#707C48] font-medium ">$2,350.00</h2>
+          <p className="text-[#332421]">Story about the product</p>
         </div>
         <div className="space-y-6">
           <div>
-            <h1 className="font-bold mb-1">Color:</h1>
-            <Selector options={colors} customClass="bg-white border border-gray-300 rounded-md text-black w-full p-2" />
+            <h1 className="font-bold mb-1 text-[#332421] hover:text-[#FF5F15]">Color:</h1>
+            <Selector options={colors} customClass="bg-white border border-[#332421] rounded-md text-black w-full p-2" />
           </div>
 
           <div>
-            <h1 className="font-bold mb-1">Clarity:</h1>
-            <Selector options={colors} customClass="bg-white border border-gray-300 rounded-md text-black w-full p-2" />
+            <h1 className="font-bold mb-1 text-[#332421] hover:text-[#FF5F15]">Clarity:</h1>
+            <Selector options={colors} customClass="bg-white border border-[#332421] rounded-md text-black w-full p-2" />
           </div>
 
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="w-full">
-              <h1 className="font-bold mb-1">Metal Type:</h1>
+              <h1 className="font-bold mb-1 text-[#332421] hover:text-[#FF5F15]">Metal Type:</h1>
               <MetalType metalType={metalTypes} />
             </div>
-            <div className="w-full">
-              <h1 className="font-bold mb-1">Size (MM)</h1>
-              <SizeSelectors sizes={sizes} />
-            </div>
+            
           </div>
+          <div className="w-full">
+              <h1 className="font-bold mb-1 text-[#332421] hover:text-[#FF5F15]">Size (MM)</h1>
+              <Selector  options={colors} customClass="" />
+              {/* <SizeSelectors sizes={sizes} /> */}
+            </div>
           <div>
-            <button className="bg-[#5f6a3b] text-white xl:text-lg font-medium px-6 py-2 xl:m-0 xl:mb-4 mb-4 rounded-full shadow-md hover:bg-[#3b562c] transition">
+            <button className="bg-[#707C48] text-white xl:text-lg font-medium px-6 py-2 xl:m-0 xl:mb-4 mb-4 rounded-full shadow-md hover:bg-[#3b562c] transition">
               Add to cart
             </button>
           </div>

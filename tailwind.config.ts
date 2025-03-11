@@ -1,3 +1,4 @@
+import { Playwrite_US_Modern } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -17,6 +18,8 @@ export default {
         droid: ['var(--droid-serif)'],
         dejavu: ['var(--dejavu-serif)'],
         montserrat: ['var(--font-montserrat)'],
+        beaufortextended: ['var(--beaufortextended)'],
+        Playwrite_US_Modern: ['var(--Playwrite_US_Modern)'],
       },
     },
   },

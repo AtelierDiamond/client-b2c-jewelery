@@ -33,7 +33,7 @@ function MetalType({ metalType }: MetalTypeProps) {
               className="hidden"
             />
             <div
-              className={`rounded-full text-sm text-black h-12 w-12 border flex items-center justify-center transition-all ${
+              className={`rounded-full text-sm text-[#332421] h-12 w-12 border flex items-center justify-center transition-all ${
                 selectedMetals.includes(item.id)
                   ? "border-black border-2"
                   : "border-gray-300"
