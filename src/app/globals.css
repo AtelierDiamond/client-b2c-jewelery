@@ -20,7 +20,38 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@font-face {
+  font-family: "Droid Serif";
+  src: url("/fonts/DroidSerif.woff2") format("woff2"),
+       url("/fonts/DroidSerif.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "DejaVu Serif";
+  src: url("/fonts/DejaVuSerif.woff2") format("woff2"),
+       url("/fonts/DejaVuSerif.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Beaufort Extended";
+  src: url("/fonts/BeaufortExtended.woff2") format("woff2"),
+       url("/fonts/BeaufortExtended.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Playwrite US Modern" !important;
+  src: url("/fonts/PlaywriteUSModern-Regular.woff2") format("woff2"),
+       url("/fonts/PlaywriteUSModern-Regular.woff") format("woff");
+       font-weight: 400;
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* --------------------------Embla-Slider------------------------------ */
 

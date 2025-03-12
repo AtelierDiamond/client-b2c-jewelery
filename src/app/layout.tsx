@@ -15,9 +15,10 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
+
 export const metadata: Metadata = {
   title: "B2C Jewellery",
-  description: "wide range of jewellery collections",
+  description: "Wide range of jewellery collections",
 };
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${montserrat.variable} antialiased`}
+        className={`font-playwrite ${inter.variable} ${montserrat.variable} antialiased`}
       >
         <AppLayout>
         {children}

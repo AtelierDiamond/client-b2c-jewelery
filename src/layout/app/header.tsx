@@ -5,8 +5,6 @@ import { IoClose, IoReorderThree } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Menu from "../header/menu";
-import Image from "next/image";
-import logo from '../../../public/images/banner/logo.png'
 
 type Route = {
   id: number;
@@ -42,7 +40,7 @@ const Header: React.FC = () => {
             <Menu route={routes} />
           </nav>
           <h1
-            className="font-semibold text-md md:text-xl xl:text-2xl cursor-pointer uppercase font-beaufortextended"
+            className="font-semibold text-md md:text-xl xl:text-2xl cursor-pointer uppercase font-beaufort"
             onClick={() => router.push("/")}
           >
             DIAMOND FOREST

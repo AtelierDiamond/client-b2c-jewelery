@@ -3,7 +3,7 @@ import { EmblaOptionsType } from "embla-carousel";
 import React, {useState} from "react";
 import img1 from "@/../public/images/engagement/ring1.jpg";
 import img2 from "@/../public/images/engagement/ring12.jpg";
-import img3 from "@/../public/images/engagement/image3.jpg";
+import img3 from "@/../public/images/categories/ring.jpg";
 import ProductDetailSlider from "./ProductDetailSlider";
 import round from '@/../public/images/DiamondShapes/Round.png';
 import asscher from '@/../public/images/DiamondShapes/Asscher.png';
@@ -22,6 +22,7 @@ import radiantSq from '@/../public/images/DiamondShapes/Radiant Square.png';
 import MetalType from "./MetalType";
 import { FaArrowLeft } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Selector from "./Selector";
 
 const OPTIONS: EmblaOptionsType = {};
 
@@ -57,7 +58,7 @@ const ProductDetail = () => {
     { id: "princess", img: princess, alt: "princess" },
     { id: "radiantSq", img: radiantSq, alt: "radiantSq" },
   ];
-  const caratWeights = ["1 ½", "2", "2 ½", "3"];
+  const caratWeights = ["1", "1 ½", "2", "2 ½", "3", "3 ½", "4", "4 ½","5"];
   const diamondQuality = ["Best - D, VVS", "Better - E, VS1", "Good - FG, VS2"];
   const colors = [
     { value: "DEF", title: "DEF" },
@@ -129,7 +130,7 @@ const ProductDetail = () => {
                   onChange={() => toggleShape(shape.id)}
                 />
                 <div className={`xl:w-10 xl:h-10 w-8 h-8 border rounded-md p-1 flex items-center justify-center transition ${
-                  selectedShape.includes(shape.id) ? "border-[#332421] " : "border-gray-300"
+                  selectedShape.includes(shape.id) ? "border-[#332421] " : "border"
                 }`}>
                   <img src={shape.img.src} alt={shape.alt} className="w-full h-full object-contain" />
                 </div>
@@ -137,6 +138,10 @@ const ProductDetail = () => {
               ))}
             </div>
           </div>
+          <div className="w-full">
+                  <h1 className="font-bold mb-1 text-[#332421]">Color:</h1>
+                  <Selector options={colors} customClass=""/>
+               </div>
           <div className="">
             <h1 className="font-bold mb-1 text-[#332421]">Carat Weight:</h1>
             <div className="flex gap-2">
@@ -149,7 +154,7 @@ const ProductDetail = () => {
                     onChange={() => toggleCarat(carat)}
                   />
                   <div className={`px-3 py-1 border rounded-md transition ${
-                    selectedCarat.includes(carat) ? "border-[#332421] " : "border-gray-300"
+                    selectedCarat.includes(carat) ? "border-[#332421] " : "border"
                   }`}>
                     {carat}
                   </div>
@@ -169,7 +174,7 @@ const ProductDetail = () => {
                     onChange={() => toggleQuality(quality)}
                   />
                   <div className={`px-3 py-1 border rounded-md transition ${
-                    selectedQuality.includes(quality) ? "border-[#332421] " : "border-gray-300"
+                    selectedQuality.includes(quality) ? "border-[#332421] " : "border"
                   }`}>
                     {quality}
                   </div>

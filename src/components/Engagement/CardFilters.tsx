@@ -88,8 +88,8 @@ function CardFilters({
                             <div
                                 ref={scrollRefs[title]}
                                 onScroll={() => updateScrollButtons(title)}
-                                className="flex overflow-x-auto scrollbar-none scroll-smooth gap-2 md:gap-3 justify-center"
-                                style={{ width: '100%', maxWidth: '180px', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                                className="flex overflow-x-auto flex-nowrap scrollbar-none scroll-smooth gap-2 xl:gap-3 justify-center"
+                                style={{ width: '100%', maxWidth: '180px', scrollbarWidth: 'none', msOverflowStyle: 'none', height: 'none' }}
                             >
                                 {items.map((item) => (
                                     <label key={item.id} className="flex flex-col justify-center items-center cursor-pointer">
@@ -115,8 +115,8 @@ function CardFilters({
                                                 </span>
                                             </div>
                                         ) : title === 'Shape' && 'img' in item ? (
-                                            <div className={`text-xs text-black xl:h-8 xl:w-9 w-5 h-5 flex items-center justify-center rounded-full ${selected[title] === item.id ? 'border border-black' : 'hover:border hover:border-black'}`}>
-                                                <Image src={item.img} alt={item.alt || ''} className="xl:w-10 xl:h-10" height={24} width={24} />
+                                            <div className="w-10 flex items-center justify-center">
+                                                <Image src={item.img} alt={item.alt || ''} className="w-full" />
                                             </div>
                                         ) : title === 'Carat' && 'text' in item ? (
                                             <div
@@ -144,4 +144,3 @@ function CardFilters({
 }
 
 export default CardFilters;
-    

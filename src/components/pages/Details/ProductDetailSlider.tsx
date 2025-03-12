@@ -3,24 +3,22 @@ import React, { useState, useEffect, useCallback } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Image, { StaticImageData } from "next/image";
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { usePrevNextButtons } from "@/hooks/usePrevNextButtons";
 
 type Slides = {
   img: StaticImageData;
-  id: number;};
+  id: number;
+};
 
 type PropType = {
   slides: Slides[];
   options?: EmblaOptionsType;
 };
 
-// const AUTOPLAY_INTERVAL = 2000;
-
-const ProductDetailSlider: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+const ProductDetailSlider: React.FC<PropType> = ({ slides, options }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel(options);
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     containScroll: "keepSnaps",
@@ -46,48 +44,43 @@ const ProductDetailSlider: React.FC<PropType> = (props) => {
     if (!emblaMainApi || !emblaThumbsApi) return;
     setSelectedIndex(emblaMainApi.selectedScrollSnap());
     emblaThumbsApi.scrollTo(emblaMainApi.selectedScrollSnap());
-  }, [emblaMainApi, emblaThumbsApi, setSelectedIndex]);
+  }, [emblaMainApi, emblaThumbsApi]);
 
   useEffect(() => {
     if (!emblaMainApi) return;
     onSelect();
-
     emblaMainApi.on("select", onSelect).on("reInit", onSelect);
   }, [emblaMainApi, onSelect]);
 
-  // useEffect(() => {
-  //   if (!emblaMainApi) return;
-    
-  //   const autoplay = setInterval(() => {
-  //     if (emblaMainApi.canScrollNext()) {
-  //       emblaMainApi.scrollNext();
-  //     } else {
-  //       emblaMainApi.scrollTo(0);
-  //     }
-  //   }, AUTOPLAY_INTERVAL);
-    
-  //   return () => clearInterval(autoplay);
-  // }, [emblaMainApi]);
-
   return (
     <div className="embla xl:p-4 p-1 items-center">
-      {/* Main slider */}
-      <div className="embla__viewport rounded-md relative max-w-[400px] max-h-[400px]" ref={emblaMainRef}>
+      {/* Main Image Slider */}
+      <div className="embla__viewport rounded-md relative" ref={emblaMainRef}>
         <div className="embla__container flex">
           {slides.map((item, index) => (
             <div className="embla__slide flex-1" key={index}>
               <div className="embla__slide__number relative">
-                <Image
-                  className="object-cover w-full h-auto rounded-md"
-                  alt=""
-                  src={item.img}
-                  priority
-                />
+                {/* Zoom Effect */}
+                <div
+                  className="relative w-full h-auto overflow-hidden cursor-crosshair"
+                  onMouseEnter={() => setIsZoomed(true)}
+                  onMouseLeave={() => setIsZoomed(false)}
+                >
+                  <Image
+                    className={`object-cover w-full h-auto rounded-md transition-transform duration-300 ${
+                      isZoomed ? "scale-150" : "scale-100"
+                    }`}
+                    alt=""
+                    src={item.img}
+                    priority
+                  />
+                </div>
               </div>
             </div>
           ))}
         </div>
 
+        {/* Navigation Buttons */}
         <button
           onClick={onPrevButtonClick}
           disabled={prevBtnDisabled}
@@ -104,6 +97,7 @@ const ProductDetailSlider: React.FC<PropType> = (props) => {
         </button>
       </div>
 
+      {/* Thumbnail Slider */}
       <div className="embla-thumbs mt-4">
         <div className="embla-thumbs__viewport" ref={emblaThumbsRef}>
           <div className="embla-thumbs__container flex md:block md:space-y-4">

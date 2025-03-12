@@ -50,7 +50,7 @@ function Carousel() {
       {/* Scrollable Carousel */}
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-scroll w-full scroll-smooth no-scrollbar px-10"
+        className="flex gap-6 overflow-x-scroll w-full scroll-smooth no-scrollbar px-10 bg-[#e9e5e2]"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
@@ -58,7 +58,7 @@ function Carousel() {
       >
         {categoryImages.map((item, index) => (
           <div key={index} className="p-2 ">
-            <div className="min-w-[180px] min-h-[160px] relative">
+            <div className="min-w-[180px] min-h-[160px] relative border border-[#a49886]">
               <Link href={`/jewells?category=${item.alt.toLowerCase()}`} passHref>
                 <Image className=" object-cover" src={item.img} alt={item.alt} />
               </Link>
