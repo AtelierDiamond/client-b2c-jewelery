@@ -39,7 +39,7 @@ const ImageCarousel = ({ link }: { link: string, className: string }) => {
                                     alt={`Slide ${image.id}`}
                                     width={300}
                                     height={400}
-                                    className="w-full h-auto object-cover shadow-md cursor-pointer rounded-3xl"
+                                    className="w-full h-auto object-cover shadow-md cursor-pointer rounded-3xl transition-transform duration-600 ease-out hover:scale-110"
                                 />
                             </Link>
                         </SwiperSlide>
@@ -50,7 +50,7 @@ const ImageCarousel = ({ link }: { link: string, className: string }) => {
                         e.stopPropagation();
                         swiperRef.current?.swiper?.slidePrev();
                     }}
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10 text-gray-500 bg-white w-6 h-6 flex items-center justify-center rounded-full shadow-md hover:bg-gray-100"
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 z-10 text-gray-500 bg-white w-6 h-6 flex items-center justify-center rounded-full shadow-md hover:bg-[#332421] hover:text-white"
                 >
                     ❮
                 </button>
@@ -59,7 +59,7 @@ const ImageCarousel = ({ link }: { link: string, className: string }) => {
                         e.stopPropagation();
                         swiperRef.current?.swiper?.slideNext();
                     }}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 z-10 text-gray-500 bg-white w-6 h-6 flex items-center justify-center rounded-full shadow-md hover:bg-gray-100"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 z-10 text-gray-500 bg-white w-6 h-6 flex items-center justify-center rounded-full shadow-md hover:bg-[#332421] hover:text-white"
                 >
                     ❯
                 </button>

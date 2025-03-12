@@ -103,7 +103,7 @@ function CardFilters({
                                         />
                                         {title === 'Metal' && 'colorCode' in item ? (
                                             <div
-                                                className={`group rounded-full xl:h-8 xl:w-8 w-6 h-6 border ${
+                                                className={`group rounded-full xl:h-6 xl:w-6 w-6 h-6 border ${
                                                     selected[title] === item.id ? 'border-black' : 'border-gray-300'
                                                 } flex items-center justify-center hover:border-black`}
                                                 style={{ backgroundColor: item.colorCode }}
@@ -113,12 +113,12 @@ function CardFilters({
                                                 </span>
                                             </div>
                                         ) : title === 'Shape' && 'img' in item ? (
-                                            <div className={`text-xs text-black xl:h-10 xl:w-10 w-5 h-5 flex items-center justify-center rounded-full ${selected[title] === item.id ? 'border border-black' : 'hover:border hover:border-black'}`}>
+                                            <div className={`text-xs text-black xl:h-8 xl:w-9 w-5 h-5 flex items-center justify-center rounded-full ${selected[title] === item.id ? 'border border-black' : 'hover:border hover:border-black'}`}>
                                                 <Image src={item.img} alt={item.alt || ''} className="xl:w-10 xl:h-10" height={24} width={24} />
                                             </div>
                                         ) : title === 'Carat' && 'text' in item ? (
                                             <div
-                                                className={`xl:text-xl text-black flex items-center justify-center cursor-pointer p-1 rounded-full ${selected[title] === item.id ? 'border border-black' : 'hover:border hover:border-black'}`}
+                                                className={`xl:text-md text-black flex items-center justify-center cursor-pointer p-1 rounded-full ${selected[title] === item.id ? 'border border-black' : 'hover:border hover:border-black'}`}
                                             >
                                                 {item.text}
                                             </div>

@@ -1,20 +1,35 @@
 "use client";
 import { EmblaOptionsType } from "embla-carousel";
-import React from "react";
+import React, {useState} from "react";
 import img1 from "@/../public/images/engagement/ring1.jpg";
 import img2 from "@/../public/images/engagement/ring12.jpg";
 import img3 from "@/../public/images/engagement/image3.jpg";
 import ProductDetailSlider from "./ProductDetailSlider";
+import round from '@/../public/images/DiamondShapes/Round.png';
+import asscher from '@/../public/images/DiamondShapes/Asscher.png';
+import radiant from '@/../public/images/DiamondShapes/Radiant.png';
+import pear from '@/../public/images/DiamondShapes/Pear.png';
+import oval from '@/../public/images/DiamondShapes/Oval.png';
+import cushionS from '@/../public/images/DiamondShapes/cushion Square.png';
+import emerald from '@/../public/images/DiamondShapes/Emerald.png';
+import princess from '@/../public/images/DiamondShapes/Princess.png';
+import marquise from '@/../public/images/DiamondShapes/Marquise.png';
+import heart from '@/../public/images/DiamondShapes/Heart.png';
+import cushionL from '@/../public/images/DiamondShapes/cushion Long.png';
+import radiantSq from '@/../public/images/DiamondShapes/Radiant Square.png';
+// import SizeSelectors from "./SizeSelectors";
+// import Selector from "./Selector";
 import MetalType from "./MetalType";
-import SizeSelectors from "./SizeSelectors";
-import Selector from "./Selector";
-// import { FaArrowLeft } from "react-icons/fa";
-// import { useRouter } from "next/navigation";
+import { FaArrowLeft } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const OPTIONS: EmblaOptionsType = {};
 
 const ProductDetail = () => {
-  // const { back } = useRouter();
+  const { back } = useRouter();
+  const [selectedShape, setSelectedShape] = useState<string []>([]);
+  const [selectedCarat, setSelectedCarat] = useState<string []>([]);
+  const [selectedQuality, setSelectedQuality] = useState<string []>([]);
 
   const sliderImages = [
     { id: 1, img: img1 },
@@ -28,13 +43,22 @@ const ProductDetail = () => {
     { id: 3, colorCode: "#e7ba9a", text: "", title: "Rose Gold" },
   ];
 
-  const sizes = [
-    { id: "size1", value: 6, title: "6" },
-    { id: "size2", value: 6.5, title: "6.5" },
-    { id: "size3", value: 7, title: "7" },
-    { id: "size4", value: 7.5, title: "7.5" },
+  const shapes = [
+    { id: "round", img: round, alt: "Round" },
+    { id: "asscher", img: asscher, alt: "Asscher" },
+    { id: "cushionS", img: cushionS, alt: "Cushion Square" },
+    { id: "radiant", img: radiant, alt: "Radiant" },
+    { id: "marquise", img: marquise, alt: "Marquise" },
+    { id: "oval", img: oval, alt: "Oval" },
+    { id: "pear", img: pear, alt: "Pear" },
+    { id: "emerald", img: emerald, alt: "Emerald" },
+    { id: "cushionL", img: cushionL, alt: "cushionL" },
+    { id: "heart", img: heart, alt: "heart" },
+    { id: "princess", img: princess, alt: "princess" },
+    { id: "radiantSq", img: radiantSq, alt: "radiantSq" },
   ];
-
+  const caratWeights = ["1 ½", "2", "2 ½", "3"];
+  const diamondQuality = ["Best - D, VVS", "Better - E, VS1", "Good - FG, VS2"];
   const colors = [
     { value: "DEF", title: "DEF" },
     { value: "GHI", title: "GHI" },
@@ -42,52 +66,130 @@ const ProductDetail = () => {
     { value: "MNO", title: "MNO" },
   ];
 
+  const toggleShape = (shapeId: string) => {
+    setSelectedShape((prev) =>
+      prev.includes(shapeId) ? prev.filter((id) => id !== shapeId) : [...prev, shapeId]
+    );
+  };
+
+  // Toggle selection for carats
+  const toggleCarat = (carat: string) => {
+    setSelectedCarat((prev) =>
+      prev.includes(carat) ? prev.filter((c) => c !== carat) : [...prev, carat]
+    );
+  };
+
+  // Toggle selection for diamond quality
+  const toggleQuality = (quality: string) => {
+    setSelectedQuality((prev) =>
+      prev.includes(quality) ? prev.filter((q) => q !== quality) : [...prev, quality]
+    );
+  };
+
   return (
     <>
-      {/* <div className="xl:pt-32 pt-24 xl:px-8 px-4 pb-6">
+      <div className="xl:pt-32 pt-24 xl:px-8 px-4">
         <button
           onClick={() => back()}
           className="m-2 text-xl border-0 bg-white flex items-center font-serif text-[#707C48]"
         >
           <FaArrowLeft size={22} />
         </button>
-      </div> */}
-      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 xl:gap-8 gap-2 font-montserrat px-6 pt-32">
-        <div className="flex flex-col items-center">
+      </div>
+      <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-8 gap-2 font-montserrat px-6 mb-6">
+        <div className="flex flex-col items-center justify-center">
           <ProductDetailSlider slides={sliderImages} options={OPTIONS} />
         </div>
         <div className="space-y-4">
-          <h1 className="xl:text-2xl text-xl font-semibold text-[#707C48]">Double Heart Ring</h1>
-          <h2 className="xl:text-xl text-md text-[#707C48] font-medium ">$2,350.00</h2>
-          <p className="text-[#332421]">Story about the product</p>
-        </div>
-        <div className="space-y-6">
-          <div>
-            <h1 className="font-bold mb-1 text-[#332421] hover:text-[#FF5F15]">Color:</h1>
-            <Selector options={colors} customClass="bg-white border border-[#332421] rounded-md text-black w-full p-2" />
-          </div>
-
-          <div>
-            <h1 className="font-bold mb-1 text-[#332421] hover:text-[#FF5F15]">Clarity:</h1>
-            <Selector options={colors} customClass="bg-white border border-[#332421] rounded-md text-black w-full p-2" />
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-full">
-              <h1 className="font-bold mb-1 text-[#332421] hover:text-[#FF5F15]">Metal Type:</h1>
+          <h1 className="xl:text-2xl text-xl font-semibold text-[#707C48]">
+            Emerald Eternity Ring
+          </h1>
+          <p className="text-sm text-gray-600">
+            14K White Gold, FG, VS2+ | IGI Certified, 14 Emerald stone
+          </p>
+          <h2 className="xl:text-xl text-lg font-semibold">$2,350.00</h2>
+          <button className="bg-[#707C48] text-white xl:text-lg text-md font-medium px-6 py-2 rounded-md shadow-md hover:bg-[#3b562c] transition">
+            Add to cart
+          </button>
+          <div className="">
+            <h1 className="font-bold mb-1 text-[#332421]">Metal Type:</h1>
+            <div className="flex gap-4">
               <MetalType metalType={metalTypes} />
             </div>
-            
           </div>
-          <div className="w-full">
-              <h1 className="font-bold mb-1 text-[#332421] hover:text-[#FF5F15]">Size (MM)</h1>
-              <Selector  options={colors} customClass="" />
-              {/* <SizeSelectors sizes={sizes} /> */}
+          <div className="">
+            <h1 className="font-bold mb-1 text-[#332421]">Shape:</h1>
+            <div className="flex flex-wrap gap-2">
+              {shapes.map((shape) => (
+                <label key={shape.id} className="relative">
+                <input
+                  type="checkbox"
+                  className="hidden"
+                  checked={selectedShape.includes(shape.id)}
+                  onChange={() => toggleShape(shape.id)}
+                />
+                <div className={`xl:w-10 xl:h-10 w-8 h-8 border rounded-md p-1 flex items-center justify-center transition ${
+                  selectedShape.includes(shape.id) ? "border-[#332421] " : "border-gray-300"
+                }`}>
+                  <img src={shape.img.src} alt={shape.alt} className="w-full h-full object-contain" />
+                </div>
+              </label>
+              ))}
             </div>
-          <div>
-            <button className="bg-[#707C48] text-white xl:text-lg font-medium px-6 py-2 xl:m-0 xl:mb-4 mb-4 rounded-full shadow-md hover:bg-[#3b562c] transition">
-              Add to cart
-            </button>
+          </div>
+          <div className="">
+            <h1 className="font-bold mb-1 text-[#332421]">Carat Weight:</h1>
+            <div className="flex gap-2">
+            {caratWeights.map((carat) => (
+                <label key={carat} className="relative">
+                  <input
+                    type="checkbox"
+                    className="hidden"
+                    checked={selectedCarat.includes(carat)}
+                    onChange={() => toggleCarat(carat)}
+                  />
+                  <div className={`px-3 py-1 border rounded-md transition ${
+                    selectedCarat.includes(carat) ? "border-[#332421] " : "border-gray-300"
+                  }`}>
+                    {carat}
+                  </div>
+                </label>
+              ))}
+            </div>
+          </div>
+          <div className="mt-6">
+            <h1 className="font-bold mb-1 text-[#332421]">Diamond Quality:</h1>
+            <div className="grid grid-cols-3 gap-2">
+            {diamondQuality.map((quality) => (
+                <label key={quality} className="relative">
+                  <input
+                    type="checkbox"
+                    className="hidden"
+                    checked={selectedQuality.includes(quality)}
+                    onChange={() => toggleQuality(quality)}
+                  />
+                  <div className={`px-3 py-1 border rounded-md transition ${
+                    selectedQuality.includes(quality) ? "border-[#332421] " : "border-gray-300"
+                  }`}>
+                    {quality}
+                  </div>
+                </label>
+              ))}
+            </div>
+          </div>
+          <div className="mt-6">
+            <h1 className="font-bold mb-1 text-[#332421]">Ring Size (In Inches)</h1>
+            <select className="w-full p-2 border rounded-md">
+              <option>Select</option>
+              {["4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8"].map((size) => (
+                <option key={size}>{size}</option>
+              ))}
+            </select>
+            <button className="mt-2 text-sm text-blue-600 underline">Size Guide</button>
+          </div>
+          <div className="mt-6">
+            <h1 className="font-bold mb-1 text-[#332421]">+ Add Engraving</h1>
+            <input type="text" placeholder="Type your message" className="w-full p-2 border rounded-md" />
           </div>
         </div>
       </div>

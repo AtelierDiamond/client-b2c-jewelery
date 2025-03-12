@@ -19,7 +19,7 @@ export default {
         dejavu: ['var(--dejavu-serif)'],
         montserrat: ['var(--font-montserrat)'],
         beaufortextended: ['var(--beaufortextended)'],
-        Playwrite_US_Modern: ['var(--Playwrite_US_Modern)'],
+        playwrite: ['var(--Playwrite_US_Modern)'],
       },
     },
   },

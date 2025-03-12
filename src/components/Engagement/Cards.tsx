@@ -121,7 +121,7 @@ const Cards = () => {
                     <div className="w-full flex justify-center items-center">
                         <ImageCarousel
                             link={`${pathname}/${item.id}`}
-                            className="w-full h-48 object-cover rounded-md"
+                            className="w-full h-48 object-cover rounded-md transition-transform duration-500 ease-in-out group-hover:scale-110"
                         />
                     </div>
                     <div className="w-full font-bold mt-2 text-sm md:text-md text-[#332421] hover:text-[#FF5F15]">
