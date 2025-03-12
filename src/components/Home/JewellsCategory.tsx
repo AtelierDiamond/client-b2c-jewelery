@@ -32,7 +32,7 @@ function JewellsCategory() {
         className="opacity-90"
         priority
       /> */}
-      <h2 className="relative text-4xl text-[#332421] font-medium mb-6 text-center mt-4">
+      <h2 className="relative text-4xl text-[#332421] font-medium mb-6 text-center mt-4 cursor-pointer">
         CATEGORIES
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
@@ -47,7 +47,7 @@ function JewellsCategory() {
                 />
               </Link>
             </div>
-            <h1 className="relative text-center xl:text-xl mt-3 font-bold text-[#332421] hover:text-[#FF5F15]">
+            <h1 className="relative text-center xl:text-xl mt-3 font-bold text-[#332421] hover:text-[#FF5F15] cursor-pointer">
               {item.alt}
             </h1>
           </div>

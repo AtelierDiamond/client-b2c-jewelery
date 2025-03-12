@@ -75,7 +75,7 @@ function CardFilters({
         <div className="container space-y-3 md:space-y-5">
             <div className="flex flex-col space-y-3 md:space-y-5">
                 {[{ title: 'Metal', items: metalType }, { title: 'Shape', items: shape }, { title: 'Carat', items: carat }].map(({ title, items }) => (
-                    <div key={title} className="flex flex-col md:flex-row items-center md:items-start mt-2">
+                    <div key={title} className="flex flex-col md:flex-row items-center md:items-start mt-2 cursor-pointer">
                         <h3 className="xl:text-lg sm:text-xs text-[#332421] hover:text-[#FF5F15]">{title}</h3>
                         <div className="flex justify-around items-center w-full">
                             <button

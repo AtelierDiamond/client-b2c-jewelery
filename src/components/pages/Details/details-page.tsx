@@ -88,7 +88,7 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className="xl:pt-32 pt-24 xl:px-8 px-4">
+      <div className="xl:pt-32 pt-24 xl:px-8 px-4 cursor-pointer">
         <button
           onClick={() => back()}
           className="m-2 text-xl border-0 bg-white flex items-center font-serif text-[#707C48]"
@@ -96,7 +96,7 @@ const ProductDetail = () => {
           <FaArrowLeft size={22} />
         </button>
       </div>
-      <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-8 gap-2 font-montserrat px-6 mb-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-8 gap-2 font-montserrat px-6 mb-6 cursor-pointer">
         <div className="flex flex-col items-center justify-center">
           <ProductDetailSlider slides={sliderImages} options={OPTIONS} />
         </div>

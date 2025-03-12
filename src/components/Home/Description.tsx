@@ -4,7 +4,7 @@ import background from "../../../public/images/banner/description-background.png
 
 function Description() {
   return (
-    <div className="min-h-screen bg-white font-droid-serif relative flex flex-col">
+    <div className="min-h-screen bg-white font-droid-serif relative flex flex-col cursor-pointer">
       <div className="absolute inset-0 w-full h-full">
         <Image
           src={background}

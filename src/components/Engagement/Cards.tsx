@@ -124,16 +124,16 @@ const Cards = () => {
                             className="w-full h-48 object-cover rounded-md transition-transform duration-500 ease-in-out group-hover:scale-110"
                         />
                     </div>
-                    <div className="w-full font-bold mt-2 text-sm md:text-md text-[#332421] hover:text-[#FF5F15]">
+                    <div className="w-full font-bold mt-2 text-sm md:text-md text-[#332421] hover:text-[#FF5F15] cursor-pointer">
                         {item.title}
                     </div>
                     <CardFilters metalType={metalType} shape={shape} carat={carat} />
-                    <div className="w-full text-md mt-5">
-                        ★★★★☆ <span className="text-[#332421] ml-1">(4.0)</span>
+                    <div className="w-full text-md mt-5 cursor-pointer">
+                        ★★★★☆ <span className="text-[#332421] ml-1 cursor-pointer">(4.0)</span>
                     </div>
                     <div className="w-full mt-5">
-                        <span className="font-semibold text-lg text-[#332421] hover:text-[#FF5F15]">₹1,424</span>
-                        <span className="text-gray-400 text-sm line-through ml-2 hover:text-[#FF5F15]">₹1,499</span>
+                        <span className="font-semibold text-lg text-[#332421] hover:text-[#FF5F15] cursor-pointer">₹1,424</span>
+                        <span className="text-gray-400 text-sm line-through ml-2 hover:text-[#FF5F15] cursor-pointer">₹1,499</span>
                     </div>
                     {/* <Link href={`${pathname}/${item.id}`} className="w-full">
                         <button

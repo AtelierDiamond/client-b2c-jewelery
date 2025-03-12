@@ -13,7 +13,7 @@ function Banner() {
         className="object-cover"
         priority
       />
-      <div className="absolute flex flex-col items-center text-center space-y-1 mt-36 md:mt-10 xl:mt-32">
+      <div className="absolute flex flex-col items-center text-center space-y-1 mt-36 md:mt-10 xl:mt-32 cursor-pointer">
         <h3 className="text-md md:text-xl xl:text-3xl font-medium text-[#332421] tracking-wide font-dejavu-serif">
           DISCOVER
         </h3>

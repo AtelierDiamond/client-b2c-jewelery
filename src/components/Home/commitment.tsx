@@ -15,7 +15,7 @@ const Commitment = () => {
     ];
 
     return (
-        <div className="text-center py-14 font-dejavu-serif">
+        <div className="text-center py-14 font-dejavu-serif cursor-pointer">
             <h2 className="text-4xl font-medium mb-6 text-[#332421]">OUR COMMITMENT</h2>
             <div className="flex justify-center gap-8 flex-wrap">
                 {commitmentList.map((item) => (
