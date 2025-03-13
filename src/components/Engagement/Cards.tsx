@@ -15,7 +15,7 @@ import marquise from '../../../public/images/DiamondShapes/Marquise.png';
 import heart from '../../../public/images/DiamondShapes/Heart.png';
 import cushionL from '../../../public/images/DiamondShapes/cushion Long.png';
 import radiantSq from '../../../public/images/DiamondShapes/Radiant Square.png';
-import Link from 'next/link';
+// import Link from 'next/link';
 import CardFilters from './CardFilters';
 
 const Cards = () => {

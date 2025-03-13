@@ -19,6 +19,7 @@ import cushionL from '@/../public/images/DiamondShapes/cushion Long.png';
 import radiantSq from '@/../public/images/DiamondShapes/Radiant Square.png';
 // import SizeSelectors from "./SizeSelectors";
 // import Selector from "./Selector";
+import Image from "next/image";
 import MetalType from "./MetalType";
 import { FaArrowLeft } from "react-icons/fa";
 import { useRouter } from "next/navigation";
@@ -132,7 +133,7 @@ const ProductDetail = () => {
                 <div className={`xl:w-10 xl:h-10 w-8 h-8 border rounded-md p-1 flex items-center justify-center transition ${
                   selectedShape.includes(shape.id) ? "border-[#332421] " : "border"
                 }`}>
-                  <img src={shape.img.src} alt={shape.alt} className="w-full h-full object-contain" />
+                  <Image src={shape.img.src} alt={shape.alt} className="w-full h-full object-contain" />
                 </div>
               </label>
               ))}
