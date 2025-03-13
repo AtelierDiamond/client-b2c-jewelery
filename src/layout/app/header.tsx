@@ -17,8 +17,8 @@ const Header: React.FC = () => {
   const router = useRouter();
 
   const routes: Route[] = [
-    { id: 1, label: "Home", path: "/" },
-    { id: 2, label: "About", path: "#" },
+    { id: 1, label: "HOME", path: "/" },
+    { id: 2, label: "ABOUT US", path: "#" },
   ];
 
   return (
