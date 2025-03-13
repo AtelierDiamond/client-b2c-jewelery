@@ -13,7 +13,7 @@ type Slides = {
 
 type PropType = {
   slides: Slides[];
-  options?: EmblaOptionsType;
+  options: EmblaOptionsType;
 };
 
 const ProductDetailSlider: React.FC<PropType> = ({ slides, options }) => {
@@ -54,13 +54,11 @@ const ProductDetailSlider: React.FC<PropType> = ({ slides, options }) => {
 
   return (
     <div className="embla xl:p-4 p-1 items-center">
-      {/* Main Image Slider */}
       <div className="embla__viewport rounded-md relative" ref={emblaMainRef}>
         <div className="embla__container flex">
           {slides.map((item, index) => (
             <div className="embla__slide flex-1" key={index}>
               <div className="embla__slide__number relative">
-                {/* Zoom Effect */}
                 <div
                   className="relative w-full h-auto overflow-hidden cursor-crosshair"
                   onMouseEnter={() => setIsZoomed(true)}
@@ -79,8 +77,6 @@ const ProductDetailSlider: React.FC<PropType> = ({ slides, options }) => {
             </div>
           ))}
         </div>
-
-        {/* Navigation Buttons */}
         <button
           onClick={onPrevButtonClick}
           disabled={prevBtnDisabled}
@@ -96,8 +92,6 @@ const ProductDetailSlider: React.FC<PropType> = ({ slides, options }) => {
           <IoIosArrowForward fontSize={22} />
         </button>
       </div>
-
-      {/* Thumbnail Slider */}
       <div className="embla-thumbs mt-4">
         <div className="embla-thumbs__viewport" ref={emblaThumbsRef}>
           <div className="embla-thumbs__container flex md:block md:space-y-4">
