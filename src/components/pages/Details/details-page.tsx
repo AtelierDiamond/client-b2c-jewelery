@@ -133,7 +133,7 @@ const ProductDetail = () => {
                 <div className={`xl:w-10 xl:h-10 w-8 h-8 border rounded-md p-1 flex items-center justify-center transition ${
                   selectedShape.includes(shape.id) ? "border-[#332421] " : "border"
                 }`}>
-                  <Image src={shape.img.src} alt={shape.alt} className="w-full h-full object-contain" />
+                  <Image src={shape.img.src} alt={shape.alt} width={200} height={400} className="w-full h-full object-contain" />
                 </div>
               </label>
               ))}
