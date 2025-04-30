@@ -1,85 +1,67 @@
-"use client";
-import React, { useState } from "react";
+'use client';
 
-const PriceInput = () => {
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(1424);
-  const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+import { useState, useEffect } from 'react';
+
+export default function PriceFilter({ onFilterChange }) {
+  const [minPrice, setMinPrice] = useState(200);
+  const [maxPrice, setMaxPrice] = useState(800);
+  const minLimit = 0;
+  const maxLimit = 1000;
+
+  useEffect(() => {
+    onFilterChange({ min: minPrice, max: maxPrice });
+  }, [minPrice, maxPrice, onFilterChange]);
+
+  const handleMinChange = (e) => {
     const value = Number(e.target.value);
-    if (value >= 0 && value <= maxPrice - 100) {
+    if (value < maxPrice) {
       setMinPrice(value);
     }
   };
-  const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+  const handleMaxChange = (e) => {
     const value = Number(e.target.value);
-    if (value >= minPrice + 100 && value <= 10000) {
+    if (value > minPrice) {
       setMaxPrice(value);
     }
   };
 
   return (
-    <div className="w-full">
-      <label className="text-sm font-medium">Price</label>
-      <div className="flex items-center gap-2 mt-2">
-        <div className="relative flex items-center">
-          <span className="absolute left-2 text-gray-500">₹</span>
-          <input
-            type="number"
-            value={minPrice}
-            onChange={handleMinChange}
-            className="pl-6 pr-2 py-1 border border-gray-300 rounded-md w-20 text-center"
-          />
-        </div>
-
-        <span className="text-sm text-gray-500">to</span>
-
-        <div className="relative flex items-center">
-          <span className="absolute left-2 text-gray-500">₹</span>
-          <input
-            type="number"
-            value={maxPrice}
-            onChange={handleMaxChange}
-            className="pl-6 pr-2 py-1 border border-gray-300 rounded-md w-20 text-center"
-          />
-        </div>
-      </div>
-      <div className="relative w-full mt-4">
-        <div className="relative h-2 bg-gray-300 rounded-md">
-          <div
-            className="absolute h-2 bg-black rounded-md"
-            style={{
-              left: `${(minPrice / 10000) * 100}%`,
-              right: `${100 - (maxPrice / 10000) * 100}%`,
-            }}
-          ></div>
-        </div>
+    <div className="p-4 border rounded-lg shadow-md w-full max-w-md relative">
+      <h2 className="text-lg font-semibold mb-4">Price Filter</h2>
+      <div className="relative w-full h-6">
+        {/* Track */}
+        <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-300 rounded-full"></div>
+        {/* Active Range */}
+        <div
+          className="absolute top-1/2 bg-blue-500 h-1 rounded-full"
+          style={{
+            left: `${(minPrice / maxLimit) * 100}%`,
+            width: `${((maxPrice - minPrice) / maxLimit) * 100}%`,
+          }}
+        ></div>
+        {/* Min Handle */}
         <input
           type="range"
-          min="0"
-          max="1000"
+          min={minLimit}
+          max={maxLimit}
           value={minPrice}
           onChange={handleMinChange}
-          className="absolute w-full top-0 h-2 appearance-none bg-transparent pointer-events-auto"
-          style={{
-            zIndex: 3,
-            cursor: "pointer",
-          }}
+          className="absolute w-full appearance-none bg-transparent pointer-events-auto"
+          style={{ zIndex: 2 }}
         />
+        {/* Max Handle */}
         <input
           type="range"
-          min="1000"
-          max="10000"
+          min={minLimit}
+          max={maxLimit}
           value={maxPrice}
           onChange={handleMaxChange}
-          className="absolute w-full top-0 h-2 appearance-none bg-transparent pointer-events-auto"
-          style={{
-            zIndex: 4,
-            cursor: "pointer",
-          }}
+          className="absolute w-full appearance-none bg-transparent pointer-events-auto"
+          style={{ zIndex: 1 }}
         />
       </div>
+      <p className="text-center mt-2">Price Range: ${minPrice} - ${maxPrice}</p>
     </div>
   );
-};
-
-export default PriceInput;
+}

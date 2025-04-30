@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import style1 from '@/utils/images/Mixed_Metal_v2.webp';
 import { Icon } from "@iconify/react";
 import Image from 'next/image';
+import PriceFilter from '../common/PriceSlider';
 
 function Filters() {
     const [toggleMetal, setToggleMetal] = useState(true);
@@ -12,7 +13,11 @@ function Filters() {
     const [toggleEngravable, setToggleEngravable] = useState(true);
     const [selectedMetals, setSelectedMetals] = useState<number[]>([]);
     const [selectedStyles, setSelectedStyles] = useState<number[]>([]);
+    const [filters, setFilters] = useState({ min: 0, max: 1000 });
 
+    const handleFilterChange = (newFilters) => {
+      setFilters(newFilters);
+    };
     const metal = [
         { id: 1, colorCode: "#ffffff", text: "14K", title: "White gold" },
         { id: 2, colorCode: "#e5ce83", text: "14K", title: "Yellow gold" },
@@ -134,6 +139,11 @@ function Filters() {
                         </div>
                     </div>
                 </div>
+                <div>
+      {/* <PriceFilter onFilterChange={handleFilterChange} /> */}
+      <p className="mt-4">Filtering products from ${filters.min} to ${filters.max}</p>
+      {/* Render your product list based on filters */}
+    </div>
                 <div className='xl:mt-0 mt-6'>
                     <div className="flex justify-between items-center cursor-pointer" onClick={() => setToggleWidth(!toggleWidth)}>
                         <p className="xl:text-xl text-md font-semibold font-montserrat text-[#332421] hover:text-[#FF5F15]">Width</p>
